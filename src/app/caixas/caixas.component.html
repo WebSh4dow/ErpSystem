@@ -1,0 +1,99 @@
+<div class="flex justify-content-between">
+    <h2>Pesquisa de Caixas</h2>
+    <a pButton label="Cadastrar" styleClass="p-button-sm" class="p-button-sm" icon="pi pi-plus mr-2"
+    routerLink="/caixas/cadastro"></a>
+</div>
+
+<div style="text-align: left">
+  <i class="" 
+     style="margin:4px 4px 0 0"> </i>
+  <input type="text" pInputText 
+         size="90" 
+         placeholder="Pesquisar"
+         (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+         style="width:fit-content" />
+</div>
+
+<div class="card shadow-3 mt-4 mb-4 p-0">
+  <p-table [responsive]="true" [rows]="5" [paginator]="true" class="w-100" 
+  #myTab [value]="tableData" [scrollable]="false" [globalFilterFields]="['grupo', 'numero','status','abertura','usuarioAbertura','Fechamento','usuarioFechamento','status']">
+            <ng-template pTemplate="header">
+              
+              
+               
+                <tr>
+                  <th>Grupo</th>
+                  <th>Número</th>
+                  <th>Abertura</th>
+                  <th>Usuário Abertura</th>
+                  <th>Fechamento</th>
+                  <th>Usuário Fechamento </th>
+                  <th>Status</th>
+                  <th class="col-acoes-header"></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-caixas>
+                <tr>
+                    <td [style]="{'width': '100px'}">
+                      <span class="p-column-title">Grupo</span>
+                      {{ caixas.grupo }}
+                    </td>
+                    <td [style]="{'width': '100px'}">
+                      <span class="p-column-title">Número</span>
+                      {{ caixas.numero}}
+                    </td>
+
+                    <td [style]="{'width': '100px'}">
+                        <span class="p-column-title">Abertura</span>
+                        {{ caixas.abertura}}
+                      </td>
+
+                      <td [style]="{'width': '100px'}">
+                        <span class="p-column-title">Usuário Abertura</span>
+                        {{ caixas.usuarioAbertura}}
+                      </td>
+
+                      <td [style]="{'width': '100px'}">
+                        <span class="p-column-title">Fechamento</span>
+                        {{ caixas.Fechamento}}
+                      </td>
+
+                      <td [style]="{'width': '200px'}">
+                        <span class="p-column-title">Usuário Fechamento</span>
+                        {{ caixas.usuarioFechamento}}
+                      </td>
+
+                      <td [style]="{'width': '200px'}">
+                        <span class="p-column-title">Status</span>
+                        {{ caixas.status}}
+                      </td>
+                    
+                    <td class="col-acoes p-1 justify-content-between">
+                      <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                      styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                      [routerLink]="['/caixas', caixas.id]"></a>
+                      <button pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                      styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
+                      ></button>
+                    </td>
+                  </tr>
+            </ng-template>
+        <ng-template  pTemplate="emptymessage">
+              <tr>
+                <td colspan="3">
+                  <span>Nenhum registro encontrado</span>
+                </td>
+              </tr>
+        </ng-template>
+         <ng-template pTemplate="summary">
+              <div class="">
+                  Totalizador: 1
+              </div>
+         </ng-template>
+    </p-table>
+</div>
+
+
+
+
+

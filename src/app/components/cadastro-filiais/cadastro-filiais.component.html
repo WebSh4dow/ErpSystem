@@ -1,0 +1,83 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h2>Cadastro de Filiais</h2>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+<div class="container-npiauto mt-4 mb-4 shadow-2">
+    <p-panel>
+        <ng-template pTemplate="header">
+        </ng-template>       
+        <div class="formgrid grid">
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Nome Fantasia</label>
+                </span>
+            </div>
+
+
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Razão Social</label>
+                </span>
+            </div>
+            
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Site</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="50"> 
+                    <label for="float-input" class="obrigatorio">E-mail</label>
+                </span>
+            </div>
+           
+
+            <div class="field col-2 p-3">
+                <span class="p-float-label">
+                    <p-inputMask mask="999.999.999-99" class="w-full"></p-inputMask>
+                    <label for="float-input" class="obrigatorio">CNPJ</label>
+                </span>
+            </div>
+
+            <div class="field col-2 md:col-9 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Sigla</label>
+                </span>
+            </div>
+
+
+        <div class="field col-4 md:col-2 p-3">
+            <label for="float-input" class="obrigatorio">Estoque Próprio?</label>
+            <span class="p-float-label"> 
+            <p-selectButton [options]="selectFiliais" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
+            
+        </span>
+    </div>
+
+    <div class="field col-12 md:col-4 p-3">
+        <label for="float-input" class="obrigatorio">Status</label>
+        <span class="p-float-label"> 
+    <p-selectButton [options]="selectStatus" [(ngModel)]="value2" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
+    
+</span>
+</div>
+    </div>
+        <ng-template pTemplate="footer">
+            <button pButton pRipple type="button" label="Salvar" class="p-button-raised p-button-success p-button-text"></button>
+        </ng-template>  
+    </p-panel>
+</div>
+
+
+

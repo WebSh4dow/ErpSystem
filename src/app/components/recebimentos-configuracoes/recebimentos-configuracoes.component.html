@@ -1,0 +1,71 @@
+<h2>Configuração de Recebimento </h2>
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="" alt="" style="width:100%">
+        <div class="container">
+          <h2>Recebimentos</h2>
+          <p class="title"></p>
+          <div class="field-checkbox">
+            <p-checkbox [(ngModel)]="value" [binary]="true" inputId="binary"></p-checkbox>
+            <label for="binary">Permitir alterar data de recebimento</label>
+        </div>
+        <div class="field-checkbox">
+            <p-checkbox [(ngModel)]="value1" [binary]="true" inputId="binary"></p-checkbox>
+            <label for="binary">Informar colaborador no recebimento do plano</label>
+        </div>
+
+    <div class="field-checkbox">
+        <p-checkbox [(ngModel)]="value2" [binary]="true" inputId="binary"></p-checkbox>
+        <label for="binary">Permitir desconto em parcelas</label>
+    </div>
+
+    <div class="field-checkbox">
+        <p-checkbox [(ngModel)]="value3" [binary]="true" inputId="binary"></p-checkbox>
+        <label for="binary">Calcular acréscimo automaticamente</label>
+    </div>
+        
+        </div>
+        
+      </div>
+      
+    </div>
+<br>
+   
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="" alt="" style="width:100%">
+        <div class="container">
+          <h2>Percentual</h2>
+          <p class="title"></p>
+          <div class="field col-12 md:col-3">
+            <span class="field col-12 md:col-4 p-3">
+            <label for="minmax"  class="obrigatorio">Percentual de Multa</label>
+            <p-inputNumber [(ngModel)]="value4" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal"
+        decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [min]="0" ></p-inputNumber>
+        
+            </span>
+        </div>
+        
+        </div>
+
+        <div class="field col-12 md:col-3">
+            <span class="field col-12 md:col-4 p-3">
+            <label for="minmax"  class="obrigatorio">Percentual de Juros</label>
+            <p-inputNumber [(ngModel)]="value5" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal"
+        decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [min]="0" ></p-inputNumber>
+        
+            </span>
+        </div>
+        
+        </div>
+        
+      </div>
+      <button pButton pRipple type="button" label="Salvar" class="p-button-raised p-button-success p-button-text"></button>  
+    </div>
+    
+
+    

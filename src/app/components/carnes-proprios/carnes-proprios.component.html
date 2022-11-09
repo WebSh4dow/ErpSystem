@@ -1,0 +1,125 @@
+
+<h2>Filtros</h2>
+<div class="grid">
+
+  
+
+<div class="field col-12 md:col-4 p-3">
+    <span class="p-float-label">
+        <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+        <label for="icon">Referência Inicial</label>
+    </span>
+</div>
+<div class="field col-12 md:col-4 p-3">
+    <span class="p-float-label">
+        <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+        <label for="icon">Referência Final</label>
+    </span>
+</div>
+</div>
+<p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Pesquisar" ></p-button>
+<p-dialog header="Selecionar Gerentes" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+  
+
+    <div class="field col-12 md:col-8 p-3">
+        <span class="p-float-label">
+            <input type="text" pInputText class="w-full"  maxlength="100"> 
+            <label for="float-input" class="obrigatorio">Usuário</label>
+        </span>
+    </div>
+
+
+
+
+        <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>
+<div class="card shadow-3 mt-4 mb-4 p-0">
+  
+    <p-table [value]="listaCarnes" [responsive]="true" [rows]="5" [paginator]="true" class="w-100">
+            <ng-template pTemplate="header">
+                <tr>
+                  <th>Código</th>
+                  <th>Cliente</th>
+                  <th>Plano</th>
+                  <th>Admissão</th>
+                  <th>Ultimo Pagamento</th>
+
+                 
+                  <th class="col-acoes-header"></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-consultasContratos>
+                <tr>
+                    <td [style]="{'text-align':'center'}">
+                      <span class="p-column-title">Código</span>
+                      {{ consultasContratos.codigo }}
+                    </td>
+                    <td [style]="{'width': '300px'}">
+                      <span class="p-column-title">Cliente</span>
+                      {{ consultasContratos.cliente}}
+                    </td>
+                    <td [style]="{'width': '300px'}">
+                        <span class="p-column-title">Plano</span>
+                        {{ consultasContratos.plano}}
+                      </td>
+
+                      <td [style]="{'width': '300px'}">
+                        <span class="p-column-title">Admissão</span>
+                        {{ consultasContratos.admissao}}
+                      </td>
+
+                      <td [style]="{'width': '300px'}">
+                        <span class="p-column-title">Pagamento</span>
+                        {{ consultasContratos.pagamento}}
+                      </td>
+                    </tr>
+            </ng-template>
+        <ng-template  pTemplate="emptymessage">
+              <tr>
+                <td colspan="6">
+                  <span>Nenhum registro encontrado</span>
+                </td>
+              </tr>
+        </ng-template>
+         <ng-template pTemplate="summary">
+              <div class="">
+                  Totalizador: 0
+              </div>
+         </ng-template>
+    </p-table>
+
+</div>
+
+<br>
+<h2>Opções de Impressão</h2>
+<div class="card shadow-3 mt-4 mb-4 p-0">
+  <h1></h1>
+
+
+    <div class="field col-10 md:col-8 p-3">
+        <span class="p-float-label">
+            <input type="text" pInputText class="w-full"  maxlength="100"> 
+            <label for="float-input" class="obrigatorio">Mensagem</label>
+        </span>
+    </div>
+
+
+<div class="field col-2 p-3">
+    <span class="p-float-label">
+        <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
+        <label for="float-input" class="obrigatorio">Ordem</label>
+    </span>
+</div> 
+
+</div>
+
+<button pButton pRipple type="button" label="Limpar" class="p-button-raised p-button-success p-button-text"></button>
+
+
+<button pButton pRipple type="button" label="Imprimir" class="p-button-raised p-button-success p-button-text"></button>
+
+
+

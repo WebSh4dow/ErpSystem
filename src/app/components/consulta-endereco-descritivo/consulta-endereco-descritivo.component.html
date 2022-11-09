@@ -1,0 +1,79 @@
+<div class="flex justify-content-between">
+    <h2>Consultas de Pagamentos por Mensalidades</h2>
+    
+</div>
+<div style="text-align: left">
+  <i class="" 
+     style="margin:4px 4px 0 0"> </i>
+  <input type="text" pInputText 
+         size="90" 
+         placeholder="Pesquisar"
+         (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+         style="width:fit-content" />
+</div>
+<div class="card shadow-3 mt-4 mb-4 p-0">
+  <p-table [responsive]="true" [rows]="5" [paginator]="true" class="w-100" 
+  #myTab [value]="tableData" [scrollable]="false" [globalFilterFields]="['id', 'nome','endereco','telefone']">
+            <ng-template pTemplate="header">
+            
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Endereço</th>
+                  <th>Telefone</th>
+                 
+                  <th class="col-acoes-header"></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-descritivos>
+                <tr>
+                    <td [style]="{'width': '300px'}">
+                      <span class="p-column-title">ID</span>
+                      {{ descritivos.id }}
+                    </td>
+                    <td [style]="{'width': '300px'}">
+                      <span class="p-column-title">Nome</span>
+                      {{ descritivos.nome}}
+                    </td>
+                    <td [style]="{'width': '300px'}">
+                        <span class="p-column-title">Endereço</span>
+                        {{ descritivos.endereco}}
+                      </td>
+
+                      <td [style]="{'width': '300px'}">
+                        <span class="p-column-title">Telefone</span>
+                        {{ descritivos.telefone}}
+                      </td>
+
+                    
+                    
+                    <td class="col-acoes p-1 justify-content-between">
+                      <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                      styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                      [routerLink]="['/departamentos', descritivos.id]"></a>
+                      <button pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                      styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
+                      ></button>
+                    </td>
+                  </tr>
+            </ng-template>
+        <ng-template  pTemplate="emptymessage">
+              <tr>
+                <td colspan="9">
+                  <span>Nenhum registro encontrado</span>
+                </td>
+              </tr>
+        </ng-template>
+         <ng-template pTemplate="summary">
+              <div class="">
+                  Totalizador: 0
+              </div>
+         </ng-template>
+    </p-table>
+</div>
+
+
+
+
+
+

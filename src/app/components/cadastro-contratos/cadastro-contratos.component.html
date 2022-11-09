@@ -1,0 +1,171 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h2>Cadastro de Contrato</h2>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+<div class="container-npiauto mt-4 mb-4 shadow-2">
+    <p-panel>
+        <ng-template pTemplate="header">
+            <label for=""><strong>ID</strong></label>
+            <p-tag styleClass="ml-2" severity="info" value="000001"></p-tag>
+        </ng-template>       
+        <div class="formgrid grid">
+
+            <div class="field col-12 md:col-8 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Filial</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-8 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Cliente</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-3 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Origem</label>
+                </span>
+            </div>
+            
+            <div class="field col-10 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de Admissão</label>
+                </span>
+            </div>
+
+            <div class="field col-10 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de Vencimento</label>
+                </span>
+            </div>
+
+            <div class="field col-10 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data da carência</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="venda" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Tipo de Venda</label>
+                </span>
+            </div> 
+
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="cobranca" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Tipo de Contrato</label>
+                </span>
+            </div> 
+
+          
+
+
+
+            <div class="field col-2 md:col-12 p-3">
+                <span class="p-float-label">
+                    <p-inputNumber [(ngModel)]="value" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
+                    <label for="float-input" class="obrigatorio">Valor Do Plano</label>
+                </span>
+            </div>
+
+           
+            <div class="grid">
+
+                <p-divider [align]="'left'">
+                    <div class="p-d-inline-flex">
+                        <i class="pi pi-id-card p-1"></i>
+                        <b>Cobrança</b>
+                    </div>
+            </p-divider>
+
+            
+
+            <div class="field col-12 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de Vencimento</label>
+                </span>
+            </div>
+            <div class="field col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="nota" optionLabel="name" ></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Gerar Nota Fiscal?</label>
+                </span>
+            </div> 
+
+            </div>
+
+            <div class="grid">
+
+                <p-divider [align]="'left'">
+                    <div class="p-d-inline-flex">
+                        <i class="pi pi-id-card p-1"></i>
+                        <b>Adesão</b>
+                    </div>
+            </p-divider>
+
+            <div class="field col-12 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Vencimento da Adesão</label>
+                </span>
+            </div> 
+
+            <div class="field col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="nota" optionLabel="name" ></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Cobrar Adesão?</label>
+                </span>
+            </div>
+
+             
+
+             </div>
+           
+
+            
+        
+        
+
+            
+
+            
+
+          
+
+           
+
+            
+             
+                
+        </div>
+        <ng-template pTemplate="footer">
+            <button pButton pRipple type="button" label="Salvar" class="p-button-raised p-button-success p-button-text"></button>
+        </ng-template>  
+    </p-panel>
+</div>
+
+
+
+
+
+
+
+
+
+

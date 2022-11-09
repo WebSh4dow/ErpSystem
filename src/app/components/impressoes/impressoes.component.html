@@ -1,0 +1,17 @@
+<h2>Configurações de Impressões</h2>
+
+<h4>Relatórios</h4>
+
+
+<p-fileUpload
+  name="myfile[]"
+  accept="image/*">
+</p-fileUpload>
+
+<div class="field col-12 md:col-4 p-3">
+    <label for="float-input" class="obrigatorio">Imprimir logos nos relatórios</label>
+    <span class="p-float-label"> 
+<p-selectButton [options]="selectStatus" [(ngModel)]="value1" optionLabel="label" optionValue="value"></p-selectButton>
+
+</span>
+</div>

@@ -1,0 +1,26 @@
+<h2>Configuração de Caixa</h2>
+
+<p-card header="Caixa" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+    <ng-template pTemplate="header">
+        
+    </ng-template>
+    <h5>Gerentes de Caixas</h5>
+<p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Pesquisar"></p-button>
+<p-dialog header="Selecionar Gerentes" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+  
+
+    <div class="field col-12 md:col-8 p-3">
+        <span class="p-float-label">
+            <input type="text" pInputText class="w-full"  maxlength="100"> 
+            <label for="float-input" class="obrigatorio">Usuário</label>
+        </span>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>
+</p-card>
+
+

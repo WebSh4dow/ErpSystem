@@ -1,0 +1,93 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h2>Cadastrar Planos Funerários</h2>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+<div class="container-npiauto mt-4 mb-4 shadow-2">
+    <p-panel>
+        <ng-template pTemplate="header">
+            <label for=""><strong>ID</strong></label>
+            <p-tag styleClass="ml-2" severity="info" value="000001"></p-tag>
+        </ng-template>       
+        <div class="formgrid grid">
+
+
+            <div class="field col-12 md:col-8 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Descrição</label>
+                </span>
+            </div>
+
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-inputNumber [(ngModel)]="value" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
+                    <label for="float-input" class="obrigatorio">Valor Da Adesão</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Tipo de Plano</label>
+                </span>
+            </div> 
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="escolha" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Possui Seguro de Vida</label>
+                </span>
+            </div> 
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-inputNumber [(ngModel)]="value" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
+                    <label for="float-input" class="obrigatorio">Valor Da Parcela</label>
+                </span>
+            </div>
+
+            
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="status" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Status</label>
+                </span>
+            </div> 
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="cobranca" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Cobrança</label>
+                </span>
+            </div> 
+
+            <div class="field col-12 md:col-8 p-3">
+                <span class="p-float-label">
+                    <textarea rows="5" cols="100" pInputTextarea></textarea>
+                    <label for="float-input" class="obrigatorio">Observação</label>
+                </span>
+            </div> 
+
+            
+    </div>
+        <ng-template pTemplate="footer">
+            <button pButton pRipple type="button" label="Salvar" class="p-button-raised p-button-success p-button-text"></button>
+        </ng-template>  
+    </p-panel>
+</div>
+
+
+
+
+
+
+
+
+

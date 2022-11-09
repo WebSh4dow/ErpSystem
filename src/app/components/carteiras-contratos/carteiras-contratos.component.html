@@ -1,0 +1,116 @@
+
+
+<div class="card shadow-3 mt-4 mb-4 p-0">
+
+    <div class="grid">
+        <p-divider [align]="'center'">
+            <div class="p-d-inline-flex">
+                <i class="pi pi-id-card p-10"></i>
+                <b>Filtros</b>
+            </div>
+    </p-divider>
+    </div>
+
+<div class="field col-8 md:col-4 p-5">
+    <span class="p-float-label">
+        <p-dropdown [options]="dependentes" optionLabel="name" class="w-full"></p-dropdown>
+        <label for="float-input" class="obrigatorio">Selecionar Dependentes</label>
+    </span>
+</div> 
+
+
+
+    <p-table [value]="listaDependentes" [responsive]="true" [rows]="8" [paginator]="true" class="w-100">
+            <ng-template pTemplate="header">
+              <th>
+                <p-columnFilter type="text" caixasList="caixas" class="p-column-filter" display = "menu"  ></p-columnFilter> 
+               </th>
+               
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Útima Impressão</th>
+                  <th>Dependentes Ativos</th>
+                  <th class="col-acoes-header"></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-carteiras>
+                <tr>
+                    <td [style]="{'text-align':'center'}">
+                      <span class="p-column-title">ID</span>
+                      {{ carteiras.id }}
+                    </td>
+                    <td [style]="{'width': '400px'}">
+                      <span class="p-column-title">Nome</span>
+                      {{ carteiras.nome}}
+                    </td>
+
+                    <td [style]="{'width': '400px'}">
+                        <span class="p-column-title">Útima Impressão</span>
+                        {{ carteiras.impressao}}
+                      </td>
+
+                      <td [style]="{'width': '400px'}">
+                        <span class="p-column-title">Dependentes Ativos</span>
+                        {{ carteiras.ativos}}
+                      </td>
+                    
+                   
+                  </tr>
+            </ng-template>
+        <ng-template  pTemplate="emptymessage">
+              <tr>
+                <td colspan="3">
+                  <span>Nenhum registro encontrado</span>
+                </td>
+              </tr>
+        </ng-template>
+         <ng-template pTemplate="summary">
+              <div class="">
+                  Totalizador: 3
+              </div>
+         </ng-template>
+    </p-table>
+</div>
+<div class="card shadow-3 mt-2 mb-4 p-0">
+<div class="grid">
+    <p-divider [align]="'left'">
+        <div class="p-d-inline-flex">
+            <i class="pi pi-id-card p-12"></i>
+            <b>Opções de Impressão</b>
+        </div>
+</p-divider>
+</div>
+
+<div class="field col-12 md:col-4 p-3">
+    <span class="p-float-label">
+        <p-dropdown [options]="register" optionLabel="name" class="w-full"></p-dropdown>
+        <label for="float-input" class="obrigatorio">Registrar Impressão?</label>
+    </span>
+</div> 
+
+<div class="field col-12 md:col-4 p-3">
+    <span class="p-float-label">
+        <p-dropdown [options]="impress" optionLabel="name" class="w-full"></p-dropdown>
+        <label for="float-input" class="obrigatorio">Imprimir Grau de Parentesco?</label>
+    </span>
+</div> 
+
+<div class="field col-12 md:col-4 p-3">
+    <span class="p-float-label">
+        <p-dropdown [options]="fonte" optionLabel="name" class="w-full"></p-dropdown>
+        <label for="float-input" class="obrigatorio">Tamanho da Fonte</label>
+    </span>
+</div> 
+
+
+<div class="field col-12 md:col-4 p-3">
+    <span class="p-float-label">
+        <p-dropdown [options]="ordem" optionLabel="name" class="w-full"></p-dropdown>
+        <label for="float-input" class="obrigatorio">Ordem</label>
+    </span>
+</div> 
+
+</div>
+
+

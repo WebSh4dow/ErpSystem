@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(182, 182, 182) rgb(241, 241, 241) ;   /* scroll thumb and track */
+}
+
+*::-webkit-scrollbar {
+    width: 8px;               /* width of the entire scrollbar */
+  }
+  
+*::-webkit-scrollbar-track {
+    background: rgb(241, 241, 241);        /* color of the tracking area */
+  }
+  
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(182, 182, 182);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(182, 182, 182); /* creates padding around scroll thumb */
+  }
+
+@import url(//db.onlinewebfonts.com/c/06d0fb8eb5251a7dba7660fab5d2f0f9?family=Formula1+Display+Bold);
+
+html {
+    height: 100%;
+    font-size: $fontSize;
+    scrollbar-width: thin;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.03);
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}  
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.layout-wrapper {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.text-red-person {
+    color: #cb2741;
+}
+
+.title-npiauto:hover {
+    color: #740215f0;
+    transition: 2s;
+}
+
+.container-npiauto {
+    font-size: 20px !important;
+}
+
+.obrigatorio::after {
+    content: "*";
+    color: rgb(170, 0, 0);
+    margin-left: 2px;
+}
+
+/* Estilo Tabelas */
+.col-acoes-header {
+    width: 150px;
+}
+
+.col-acoes {
+    width: 150px;
+}
+
+.col-acoes .p-button {
+    margin: 5px !important;
+}
+
+@media (max-width: 500px) {
+    .col-acoes-header {
+        width: 115px;
+    }
+
+    .col-acoes-header {
+        width: 120px;
+      }
+    
+      .col-acoes {
+        width: 120px;
+      }
+}

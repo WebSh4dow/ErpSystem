@@ -1,0 +1,61 @@
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-8">
+        <h2>Abertura de Caixa</h2>
+        <small class="text-left"> * - para campos obrigatórios</small>
+     </div>
+    <div class="col-12 md:col-4">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+<div class="container-npiauto mt-4 mb-4 shadow-2">
+    <p-panel>
+     <ng-template pTemplate="header">
+            <label for=""><strong>ID</strong></label>
+            <p-tag styleClass="ml-2" severity="info" value="000001"></p-tag>
+        </ng-template>       
+        <div class="formgrid grid">
+            <div class="field col-10 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Grupo</label>
+                </span>
+            </div>
+
+            <div class="grid">
+
+                <p-divider [align]="'left'">
+                    <div class="p-d-inline-flex">
+                        <i class="pi pi-id-card p-1"></i>
+                        <b>Abertura</b>
+                    </div>
+            </p-divider>
+
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Usuário Abertura</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de Abertura</label>
+                </span>
+            </div>
+        </div>
+             
+                
+        </div>
+        <ng-template pTemplate="footer">
+            <button pButton pRipple type="button" label="Salvar" class="p-button-raised p-button-success p-button-text"></button>
+        </ng-template>  
+    </p-panel>
+</div>
+
+
+
+
+
+
+

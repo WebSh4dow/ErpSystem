@@ -20,26 +20,19 @@
                 </span>
             </div>
 
-
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
-                    <label for="icon">Data de Nascimento</label>
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Nome de tratamento</label>
                 </span>
             </div>
+
 
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Nome do Pai</label>
-                </span>
-            </div>
-
-            <div class="field col-10 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Nome de tratamento</label>
                 </span>
             </div>
 
@@ -50,13 +43,147 @@
                 </span>
             </div>
 
+            
+
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputMask mask="9999999999-9" class="w-full"></p-inputMask>
-                    <label for="float-input" class="obrigatorio">RG</label>
+                    <p-dropdown [options]="sexo" optionLabel="name" class="w-full"></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Sexo</label>
                 </span>
+            </div> 
+
+
+            <div class="field col-12 md:col-6 p-3">
+                <div class="p-inputgroup">
+                    <input [disabled]="true"  type="text" pInputText placeholder="Cargo">   
+                    <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                </div>
             </div>
+
+            <div class="field col-12 md:col-3 p-3">
+                <div class="p-inputgroup">
+                    <input [disabled]="true"  type="text" pInputText placeholder="Filial">   
+                    <button (click)="showModalDialog()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                </div>
+                <p-dialog header="Pesquisa de Filiais" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+  
+
+
+    <div class="flex justify-content-between">
+    </div>
+    <div style="text-align: left">
+      <i class="" 
+         style="margin:4px 4px 0 0"> </i>
+      <input type="text" pInputText 
+             size="70" 
+             placeholder="Pesquisar"
+             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+             style="width:fit-content" />
+    </div>
+    <div class="card shadow-3 mt-4 mb-4 p-0">
+      <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+      #myTab [value]="tableData" 
+      [scrollable]="false" 
+      [globalFilterFields]=
+      "['nome','sigla']" [paginator]="true" class="w-100">
+                <ng-template pTemplate="header">
+                  
+                   
+                    <tr>
+
+                      <th>Nome </th>
+                      <th>Sigla</th>
+                     
+                      <th class="col-acoes-header"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-filiais>
+                    <tr>
+                      
+                        <td [style]="{'width': '100px'}">
+                          <span class="p-column-title">Nome</span>
+                          {{ filiais.nome}}
+                        </td>
+    
+                        <td [style]="{'width': '100px'}">
+                            <span class="p-column-title">Sigla</span>
+                            {{ filiais.sigla}}
+                          </td>
+    
+                      </tr>
+                </ng-template>
+            <ng-template  pTemplate="emptymessage">
+                  <tr>
+                    <td colspan="9">
+                      <span>Nenhum registro encontrado</span>
+                    </td>
+                  </tr>
+            </ng-template>
+             <ng-template pTemplate="summary">
+                  <div class="">
+                      Totalizador: 1
+                  </div>
+             </ng-template>
+        </p-table>
+    </div>
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>
+            </div>
+
+
+            <div class="field col-12 md:col-3 p-3">
+                <div class="p-inputgroup" style="color:black">
+                    <input [disabled]="true"  type="text" pInputText placeholder="Naturalidade">   
+                    <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                </div>
+            </div>
+
+            <div class="field col-12 md:col-6 p-3">
+                <div class="p-inputgroup">
+                    <input type="text" [disabled]="true"  pInputText placeholder="Setor">   
+                    <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                </div>
+            </div>
+
+            <div class="field col-12 md:col-3 p-3">
+                <div class="p-inputgroup">
+                    <input type="text" [disabled]="true"  pInputText placeholder="Gerente">   
+                    <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                </div>
+            </div>
+
+            <div class="field col-12 md:col-3 p-3">
+                <div  class="p-inputgroup">
+                    <input type="text" [disabled]="true"  pInputText placeholder="Profissão">   
+                    <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                </div>
+            </div>
+
+          
+
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
@@ -72,12 +199,14 @@
                 </span>
             </div>
 
+          
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <p-inputMask mask="999.999.999-99" class="w-full"></p-inputMask>
                     <label for="float-input" class="obrigatorio">CPF</label>
                 </span>
             </div>
+            
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
@@ -86,6 +215,9 @@
                 </span>
             </div>
 
+           
+
+
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
@@ -93,33 +225,66 @@
                 </span>
             </div>
 
-           
-
-            
+          
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-dropdown [options]="sexo" optionLabel="name" class="w-full"></p-dropdown>
-                    <label for="float-input" class="obrigatorio">Sexo</label>
+                    <p-inputMask mask="9999999999-9" class="w-full"></p-inputMask>
+                    <label for="float-input" class="obrigatorio">RG</label>
                 </span>
-            </div> 
+            </div>
+
+
           
+
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de Nascimento</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de admissão</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de demissão</label>
+                </span>
+            </div>
+
+
+         <div class="field col-12 md:col-4 p-3">
+            <label for="float-input" class="obrigatorio">Status</label>
+            <span class="p-float-label"> 
+        <p-selectButton [options]="selectStatus" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
+        
+    </span>
+</div>
+
             <div class="field col-12 md:col-10 p-3">
                 <span class="p-float-label">
-                    <textarea rows="5" cols="100" pInputTextarea></textarea>
+                    <textarea rows="5" cols="105" pInputTextarea></textarea>
                     <label for="float-input" class="obrigatorio">Observação</label>
                 </span>
             </div> 
 
-
-            <div class="field col-12 md:col-4 p-3">
-                <label for="float-input" class="obrigatorio">Status</label>
-                <span class="p-float-label"> 
-            <p-selectButton [options]="selectStatus" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
-            
-        </span>
-    </div>
 </div>
+
+<p-fileUpload
+  name="myfile[]"
+  accept="image/*">
+ 
+</p-fileUpload>
+
+<small class="text-left"> Arraste a imagem aqui ou selecione </small>
+
         <ng-template pTemplate="footer">
             <button pButton pRipple type="button" label="Salvar" class="p-button-raised p-button-success p-button-text"></button>
         </ng-template>  

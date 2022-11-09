@@ -31,21 +31,21 @@
             </ng-template>
             <ng-template pTemplate="body" let-filiais>
                 <tr>
-                    <td [style]="{'width': '400px'}">
+                    <td [style]="{'width': '300px'}">
                       <span class="p-column-title">ID</span>
                       {{ filiais.id }}
                     </td>
-                    <td [style]="{'width': '400px'}">
+                    <td [style]="{'width': '300px'}">
                       <span class="p-column-title">Descrição</span>
                       {{ filiais.nome}}
                     </td>
 
-                    <td [style]="{'width': '400px'}">
+                    <td [style]="{'width': '300px'}">
                         <span class="p-column-title">Sigla</span>
                         {{ filiais.sigla}}
                       </td>
 
-                      <td [style]="{'width': '400px'}">
+                      <td [style]="{'width': '300px'}">
                         <span class="p-column-title">Sigla</span>
                         {{ filiais.status}}
                       </td>
@@ -64,7 +64,7 @@
             </ng-template>
         <ng-template  pTemplate="emptymessage">
               <tr>
-                <td colspan="3">
+                <td colspan="9">
                   <span>Nenhum registro encontrado</span>
                 </td>
               </tr>

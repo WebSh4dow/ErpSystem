@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+interface Filiais {
+  
+  nome?:string
+  sigla?:string
+  
+}
 
 @Component({
   selector: 'app-cadastro-funcionarios',
   templateUrl: './cadastro-funcionarios.component.html',
   styleUrls: ['./cadastro-funcionarios.component.scss']
 })
+
+ 
 export class CadastroFuncionariosComponent implements OnInit {
   minDate: Date;
 
@@ -22,7 +30,27 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   date3!: Date;
 
+  valueIconLeft: any;
+
+  valueIconLeft0: any;
+
+  valueIconLeft1: any;
+
+  valueIconLeft2: any;
+
+  valueIconLeft3: any;
+
+  valueIconLeft4: any;
+
+  displayModal: boolean;
+
+  tableData: Filiais[] = [];
+
+  cols: any[] = [];
+
   invalidDates: Array<Date>
+
+ 
   
   
   items: any = [];
@@ -79,7 +107,24 @@ export class CadastroFuncionariosComponent implements OnInit {
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
 
+    this.cols = [
+      { field: 'id', header: 'id' },
+      { field: 'nome', header: 'nome' },
+      { field: 'sigla', header: 'sigla' },
+      { field: 'status', header: 'status' },
+  ];
+
+  this.tableData = 
+  [{nome:'Matriz',sigla:'MSG'},]
+
+
   }
+
+  showModalDialog() {
+    this.displayModal = true;
+}
 
  
 }
+
+

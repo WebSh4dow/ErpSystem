@@ -29,16 +29,16 @@
             </ng-template>
             <ng-template pTemplate="body" let-recebimentos>
                 <tr>
-                    <td [style]="{'text-align':'center'}">
+                    <td [style]="{'width': '300px'}">
                       <span class="p-column-title">ID</span>
                       {{ recebimentos.id }}
                     </td>
-                    <td [style]="{'width': '800px'}">
+                    <td [style]="{'width': '300px'}">
                       <span class="p-column-title">Descrição</span>
                       {{ recebimentos.descricao}}
                     </td>
 
-                    <td [style]="{'width': '800px'}">
+                    <td [style]="{'width': '300px'}">
                         <span class="p-column-title">Sigla</span>
                         {{ recebimentos.sigla}}
                       </td>
@@ -55,7 +55,7 @@
             </ng-template>
         <ng-template  pTemplate="emptymessage">
               <tr>
-                <td colspan="3">
+                <td colspan="9">
                   <span>Nenhum registro encontrado</span>
                 </td>
               </tr>

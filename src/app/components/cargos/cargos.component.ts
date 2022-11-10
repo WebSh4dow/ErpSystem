@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 interface Cargos {
   id?:number
   descricao?:string
 }
+
 @Component({
   selector: 'app-cargos',
   templateUrl: './cargos.component.html'

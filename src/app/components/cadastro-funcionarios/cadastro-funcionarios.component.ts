@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+
 interface Filiais {
   
   nome?:string
@@ -6,10 +8,26 @@ interface Filiais {
   
 }
 
+interface Cargos {
+  descricao:string
+
+}
+
+interface Setores {
+  descricao:string
+
+}
+
+interface Naturalidade {
+  descricao:string
+  UF: string
+
+}
+
+
 @Component({
   selector: 'app-cadastro-funcionarios',
-  templateUrl: './cadastro-funcionarios.component.html',
-  styleUrls: ['./cadastro-funcionarios.component.scss']
+  templateUrl: './cadastro-funcionarios.component.html'
 })
 
  
@@ -44,15 +62,31 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   displayModal: boolean;
 
+  displayModalCargo:boolean
+
+  displayModalNaturalidade:boolean
+
+  displayModalSetores:boolean
+
   tableData: Filiais[] = [];
+
+  tableData1: Cargos [] = [];
+
+  tableData2: Naturalidade [] = [];
+
+  tableData3:Setores [] = [];
+
 
   cols: any[] = [];
 
+  colsCargos:any [] = [];
+
+  colsNaturalidade:any [] = [];
+
+  colsSetores:any [] = [];
+
   invalidDates: Array<Date>
 
- 
-  
-  
   items: any = [];
 
   constructor() {
@@ -102,12 +136,11 @@ export class CadastroFuncionariosComponent implements OnInit {
     this.maxDate = new Date();
     this.maxDate.setMonth(nextMonth);
     this.maxDate.setFullYear(nextYear);
-
     let invalidDate = new Date();
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
 
-    this.cols = [
+  this.cols = [
       { field: 'id', header: 'id' },
       { field: 'nome', header: 'nome' },
       { field: 'sigla', header: 'sigla' },
@@ -118,13 +151,63 @@ export class CadastroFuncionariosComponent implements OnInit {
   [{nome:'Matriz',sigla:'MSG'},]
 
 
-  }
 
-  showModalDialog() {
+ this.colsCargos = [
+    { field: 'descricao', header: 'descricao' },
+ ];
+
+ this.tableData1 = 
+[{descricao:'Estagiario'}]
+
+
+this.tableData2 = 
+[{descricao:'FORATALEZA',UF:'CE'}]
+
+this.colsNaturalidade = [
+  { field: 'descricao', header: 'descricao' },
+  { field: 'UF', header: 'UF' },
+];
+
+this.tableData2 = 
+[{descricao:'FORATALEZA',UF:'CE'}]
+
+
+this.colsNaturalidade = [
+  { field: 'descricao', header: 'descricao' },
+  { field: 'UF', header: 'UF' },
+];
+
+this.tableData3 = 
+[{descricao:'ADMINISTRATIVO'}]
+
+this.colsSetores = [
+  { field: 'descricao', header: 'descricao' },
+
+];
+
+
+
+
+
+
+
+}
+
+showModalDialog() {
     this.displayModal = true;
 }
 
- 
+showModalDialogCargo() {
+  this.displayModalCargo = true;
 }
 
+showModalDialogNaturalidade(){
+  this.displayModalNaturalidade = true;
+}
+
+showModalDialogSetor(){
+  this.displayModalSetores = true;
+}
+
+}
 

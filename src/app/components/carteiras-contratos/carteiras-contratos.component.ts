@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { __values } from 'tslib';
 
+
+interface Cliente {
+  nome:string
+  email:string
+
+}
 @Component({
   selector: 'app-carteiras-contratos',
   templateUrl: './carteiras-contratos.component.html'
@@ -14,9 +20,13 @@ export class CarteirasContratosComponent implements OnInit {
 
  ordem:any = [];
 
+ displayModal:boolean
+
+ displayModal2:boolean
+
  dependentes:any = [];
 
- listaDependentes = [{id:1,nome:'',impressao:'',ativos:''}]
+ listaDependentes = []
 
   constructor() {
 
@@ -40,6 +50,14 @@ export class CarteirasContratosComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  showModalDialog() {
+    this.displayModal = true;
+  }
+
+  showModalDialog2(){
+    this.displayModal2 = true;
   }
 
 }

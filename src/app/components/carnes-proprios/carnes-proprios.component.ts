@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Usuario {  
+  usuario:string
+} 
+
 @Component({
   selector: 'app-carnes-proprios',
   templateUrl: './carnes-proprios.component.html'
@@ -31,6 +35,8 @@ export class CarnesPropriosComponent implements OnInit {
   displayPosition: boolean;
 
   position: string;
+
+  tableData: Usuario[] = [];
 
   listaCarnes:[{codigo:'',cliente:'',plano:'',admissao:'',pagamento:''}]
   constructor() {  

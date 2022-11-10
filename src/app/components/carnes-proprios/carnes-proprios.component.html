@@ -18,17 +18,77 @@
 
 </div>
 
-<p-button (click)="showModalDialog()" icon="pi pi-external-link"  [style]="{width: '71vw'}" label="Pesquisar" ></p-button>
+<p-button (click)="showModalDialog()" icon="pi pi-search"  [style]="{width: '71vw'}" label="Pesquisar" ></p-button>
 <p-dialog header="Selecionar Gerentes" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
   
 
-    <div class="field col-12 md:col-8 p-3">
-        <span class="p-float-label">
-            <input type="text" pInputText class="w-full"  maxlength="100"> 
-            <label for="float-input" class="obrigatorio">Usuário</label>
-        </span>
+    <div class="flex justify-content-between">
+        
     </div>
+    
+    <div style="text-align: left">
+      <i class="" 
+         style="margin:4px 4px 0 0"> </i>
+      <input type="text" pInputText 
+             size="71" 
+             placeholder="Pesquisar"
+             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+             style="width:fit-content" />
+    </div>
+    
+    <div class="card shadow-3 mt-4 mb-4 p-0">
+      <p-table [responsive]="true" [rows]="5" [paginator]="true" class="w-100" 
+      #myTab [value]="tableData" [scrollable]="false" [globalFilterFields]="['id', 'email','status','funcionario']">
+                <ng-template pTemplate="header">
+                  
+                   
+                    <tr>
+                      <th>Usuário</th>
+                      <th class="col-acoes-header"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-usuario>
+                    <tr>
+                        <td [style]="{'width': '100px'}">
+                          <span class="p-column-title">Usuário</span>
+                          {{ usuario.usuario }}
+                        </td>
+                        
+                        
+                        <td class="col-acoes p-1 justify-content-between">
+                          <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                          styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                          [routerLink]="['/usuarios', usuario.id]"></a>
+                          <button pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                          styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
+                          ></button>
+                        </td>
+                      </tr>
+                </ng-template>
+            <ng-template  pTemplate="emptymessage">
+                  <tr>
+                    <td colspan="5">
+                      <span>Nenhum usuário ativo encontrado</span>
+                    </td>
+                  </tr>
+            </ng-template>
+             <ng-template pTemplate="summary">
+                  <div class="">
+                      Totalizador: 0
+                  </div>
+             </ng-template>
+        </p-table>
+    </div>
+
+
+
+
+
+
+
+
+
   
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
@@ -112,10 +172,10 @@
 
 </div>
 
-<button pButton pRipple type="button" label="Limpar" class="p-button-raised p-button-success p-button-text"></button>
+<button pButton pRipple type="button" label="Limpar" class="p-button-raised  p-button-text"></button>
 
 
-<button pButton pRipple type="button" label="Imprimir" class="p-button-raised p-button-success p-button-text"></button>
+<button pButton pRipple type="button" label="Imprimir" class="p-button-raised  p-button-text"></button>
 
 
 

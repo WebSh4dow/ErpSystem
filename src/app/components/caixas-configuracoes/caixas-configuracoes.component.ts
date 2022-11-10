@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Usuario {  
+    usuario:string
+} 
+
 @Component({
   selector: 'app-caixas-configuracoes',
-  templateUrl: './caixas-configuracoes.component.html',
-  styleUrls: ['./caixas-configuracoes.component.scss']
+  templateUrl: './caixas-configuracoes.component.html'
 })
-export class CaixasConfiguracoesComponent  {
+
+export class CaixasConfiguracoesComponent implements OnInit  {
 
   displayModal: boolean;
 
@@ -18,6 +22,10 @@ export class CaixasConfiguracoesComponent  {
   displayPosition: boolean;
 
   position: string;
+
+  cols:any [] = []
+
+  tableData: Usuario[] = [];
 
   showModalDialog() {
       this.displayModal = true;
@@ -38,6 +46,14 @@ export class CaixasConfiguracoesComponent  {
   showPositionDialog(position: string) {
       this.position = position;
       this.displayPosition = true;
+  }
+
+  ngOnInit(): void {
+    this.cols = [
+      { field: 'descricao', header: 'descricao' },
+  ];
+
+ 
   }
 
 }

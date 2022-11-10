@@ -2,22 +2,23 @@
 <h2>Filtros</h2>
 <div class="grid">
 
-  
-
 <div class="field col-12 md:col-4 p-3">
     <span class="p-float-label">
         <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
         <label for="icon">Referência Inicial</label>
     </span>
 </div>
+
 <div class="field col-12 md:col-4 p-3">
     <span class="p-float-label">
         <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
         <label for="icon">Referência Final</label>
     </span>
 </div>
+
 </div>
-<p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Pesquisar" ></p-button>
+
+<p-button (click)="showModalDialog()" icon="pi pi-external-link"  [style]="{width: '71vw'}" label="Pesquisar" ></p-button>
 <p-dialog header="Selecionar Gerentes" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
   
@@ -28,11 +29,8 @@
             <label for="float-input" class="obrigatorio">Usuário</label>
         </span>
     </div>
-
-
-
-
-        <ng-template pTemplate="footer">
+  
+    <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
         </ng-template>
 </p-dialog>
@@ -46,8 +44,6 @@
                   <th>Plano</th>
                   <th>Admissão</th>
                   <th>Ultimo Pagamento</th>
-
-                 
                   <th class="col-acoes-header"></th>
                 </tr>
             </ng-template>

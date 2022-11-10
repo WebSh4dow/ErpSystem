@@ -10,7 +10,7 @@ interface Cargos {
   templateUrl: './cargos.component.html'
 })
 export class CargosComponent implements OnInit {
-  cargosArrayList=[{id:1, descricao: 'GERENTE'}]
+  
   tableData: Cargos[] = [];
   cols: any[] = [];
 

@@ -24,6 +24,16 @@ interface Naturalidade {
 
 }
 
+interface Gerente {
+  nome:string
+  tratamento:string
+
+}
+
+interface Profissao {
+  descricao:string
+
+}
 
 @Component({
   selector: 'app-cadastro-funcionarios',
@@ -32,6 +42,7 @@ interface Naturalidade {
 
  
 export class CadastroFuncionariosComponent implements OnInit {
+
   minDate: Date;
 
   sexo: any = [];
@@ -68,14 +79,21 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   displayModalSetores:boolean
 
+  displayModalGerentes:boolean
+
+  displayModalProfissao:boolean
+
   tableData: Filiais[] = [];
 
   tableData1: Cargos [] = [];
 
   tableData2: Naturalidade [] = [];
 
-  tableData3:Setores [] = [];
+  tableData3: Setores [] = [];
 
+  tableData4: Gerente[] = [];
+
+  tableData5: Profissao[] = [];
 
   cols: any[] = [];
 
@@ -84,6 +102,10 @@ export class CadastroFuncionariosComponent implements OnInit {
   colsNaturalidade:any [] = [];
 
   colsSetores:any [] = [];
+
+  colsGerentes:any [] = [];
+
+  colsProfissoes:any [] = [];
 
   invalidDates: Array<Date>
 
@@ -186,10 +208,23 @@ this.colsSetores = [
 ];
 
 
+this.tableData4 = 
+[{nome:'Fulano',tratamento:'de Tal'}]
+
+this.colsGerentes = [
+  { field: 'nome', header: 'nome' },
+  { field: 'tratamento', header: 'tratamento' },
+
+];
 
 
+this.tableData5 = 
+[{descricao:'Desenvolvedor'}]
 
+this.colsGerentes = [
+  { field: 'descricao', header: 'descricao' },
 
+];
 
 }
 
@@ -201,12 +236,20 @@ showModalDialogCargo() {
   this.displayModalCargo = true;
 }
 
-showModalDialogNaturalidade(){
+showModalDialogNaturalidade() {
   this.displayModalNaturalidade = true;
 }
 
-showModalDialogSetor(){
+showModalDialogSetor() {
   this.displayModalSetores = true;
+}
+
+showModalDialogGerente() {
+  this.displayModalGerentes = true;
+}
+
+showModalDialogProfissao() {
+  this.displayModalProfissao = true;
 }
 
 }

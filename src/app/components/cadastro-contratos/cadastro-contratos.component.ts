@@ -36,11 +36,13 @@ export class CadastroContratosComponent implements OnInit {
   value = 0;
   
   constructor() {
-    this.cobranca.push({name:'NOVO', value: 0});
-    this.cobranca.push({name:'RENOVACAO', value: 1});
-    this.cobranca.push({name:'RECUPERAÇÃO', value: 2});
-    this.cobranca.push({name:'TRANSFERÊNCIA', value: 3});
-    
+    this.cobranca.push({name:'Selecione um tipo de cobrança', value: 0});
+    this.cobranca.push({name:'Boleto', value: 1});
+    this.cobranca.push({name:'Carnê', value: 2});
+    this.cobranca.push({name:'Carteira', value: 3});
+    this.cobranca.push({name:'Débito Automático', value: 4});
+    this.cobranca.push({name:'Empresa', value: 5});
+
 
     this.venda.push({name:'INTERNA', value: 0});
     this.venda.push({name:'EXTERNA', value: 1});

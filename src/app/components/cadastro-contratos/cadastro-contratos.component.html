@@ -83,16 +83,14 @@
             </div>
 
            
-            <div class="grid">
+              <h2>Cobrança</h2>
 
-                <p-divider [align]="'left'">
-                    <div class="p-d-inline-flex">
-                        <i class="pi pi-id-card p-1"></i>
-                        <b>Cobrança</b>
-                    </div>
-            </p-divider>
-
-            
+            <div class="field col-12 md:col-8 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Cobrador</label>
+                </span>
+            </div>
 
             <div class="field col-12 p-3">
                 <span class="p-float-label">
@@ -100,23 +98,24 @@
                     <label for="icon">Data de Vencimento</label>
                 </span>
             </div>
-            <div class="field col-4 p-3">
+            <div class="field col-2 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="nota" optionLabel="name" ></p-dropdown>
                     <label for="float-input" class="obrigatorio">Gerar Nota Fiscal?</label>
                 </span>
-            </div> 
-
             </div>
 
-            <div class="grid">
+            <div class="field col-4 p-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="cobranca" optionLabel="name" ></p-dropdown>
+                    <label for="float-input" class="obrigatorio">Tipo de Cobrança</label>
+                </span>
+            </div>
+            
+           
 
-                <p-divider [align]="'left'">
-                    <div class="p-d-inline-flex">
-                        <i class="pi pi-id-card p-1"></i>
-                        <b>Adesão</b>
-                    </div>
-            </p-divider>
+
+           <h2>Adesão</h2>
 
             <div class="field col-12 p-3">
                 <span class="p-float-label">
@@ -134,7 +133,6 @@
 
              
 
-             </div>
            
 
             

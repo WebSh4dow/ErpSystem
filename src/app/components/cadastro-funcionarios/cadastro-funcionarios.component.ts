@@ -51,8 +51,6 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   maxDate: Date;
 
-  value1:string
-
   date1!: Date;
 
   date2!: Date;
@@ -110,6 +108,8 @@ export class CadastroFuncionariosComponent implements OnInit {
   invalidDates: Array<Date>
 
   items: any = [];
+
+  value1 :string= "ativo"
 
   constructor() {
     this.sexo.push({name:'Selecione o sexo', value: 0});

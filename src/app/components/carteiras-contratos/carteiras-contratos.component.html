@@ -1,4 +1,4 @@
-<h1>Impressão de Carteiras</h1>
+<h2>Impressão de Carteiras</h2>
 <p-button (click)="showModalDialog()" icon="pi pi-search"  [style]="{width: '71vw'}" label="Pesquisar" ></p-button>
 <p-dialog header="Pesquisa de clientes" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
@@ -126,24 +126,26 @@
          </ng-template>
     </p-table>
 </div>
+<h2>Opções de impressões</h2>
+<div class="card shadow-3 mt-4 mb-4 p-0">
 
-<h1>Opções de impressões</h1>
 
-<div class="field col-2 md:col-12 p-3">
+<div class="field col-2 md:col-12 p-5">
     <span class="p-float-label">
         <p-dropdown [options]="register" optionLabel="name" class="w-full"></p-dropdown>
         <label for="float-input" class="obrigatorio">Registrar Impressão?</label>
     </span>
 </div> 
 
-<div class="field col-12 md:col-12 p-3">
+<div class="field col-12 md:col-12 p-5">
     <span class="p-float-label">
         <p-dropdown [options]="impress" optionLabel="name" class="w-full"></p-dropdown>
         <label for="float-input" class="obrigatorio">Imprimir Grau de Parentesco?</label>
     </span>
 </div> 
-
-<div class="field col-12 md:col-12 p-3">
+</div>
+<div class="card shadow-3 mt-4 mb-4 p-0">
+<div class="field col-12 md:col-12 p-5">
     <span class="p-float-label">
         <p-dropdown [options]="fonte" optionLabel="name" class="w-full"></p-dropdown>
         <label for="float-input" class="obrigatorio">Tamanho da Fonte</label>
@@ -151,14 +153,13 @@
 </div> 
 
 
-<div class="field col-8 md:col-12 p-3">
+<div class="field col-8 md:col-12 p-5">
     <span class="p-float-label">
         <p-dropdown [options]="ordem" optionLabel="name" class="w-full"></p-dropdown>
         <label for="float-input" class="obrigatorio">Ordem</label>
     </span>
 </div> 
-
-
+</div>
     <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
     <button pButton pRipple type="button" label="Imprimir" class="p-button-raised  p-button-text"></button>
 

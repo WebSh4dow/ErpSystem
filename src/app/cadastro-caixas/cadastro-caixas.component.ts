@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
+
+
+
 @Component({
   selector: 'app-cadastro-caixas',
   templateUrl: './cadastro-caixas.component.html'
@@ -14,6 +19,8 @@ export class CadastroCaixasComponent implements OnInit {
   invalidDates: Array<Date>
 
   items: any = [];
+
+  displayModal: boolean;
 
 
   constructor() {
@@ -66,6 +73,8 @@ export class CadastroCaixasComponent implements OnInit {
     this.invalidDates = [today,invalidDate];
   }
 
-
+  showModalDialog() {
+    this.displayModal = true;
+}
 
 }

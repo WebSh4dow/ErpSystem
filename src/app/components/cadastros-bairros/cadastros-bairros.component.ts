@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Cobrador { 
+nome:string
+tratamento:string
+
+}
+
 @Component({
   selector: 'app-cadastros-bairros',
   templateUrl: './cadastros-bairros.component.html'
@@ -7,6 +13,9 @@ import { Component, OnInit } from '@angular/core';
 export class CadastrosBairrosComponent implements OnInit {
 
   items: any = [];
+  displayModal: boolean;
+  tableData: Cobrador[] = [];
+  cols: any[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -17,4 +26,7 @@ export class CadastrosBairrosComponent implements OnInit {
     ];
   }
 
+  showModalDialog() {
+    this.displayModal = true;
+  }
 }

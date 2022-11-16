@@ -12,7 +12,7 @@
     <p-tabView styleClass="tabview-custom">
         <p-tabPanel>
             <ng-template pTemplate = "header">
-                <i class="pi pi-user"></i>
+                <i class="pi pi-user" style="padding: 1em;"></i>
                 <span>Pessoa Física</span>
             </ng-template>
             
@@ -48,7 +48,7 @@
                             </span>
                         </div>
             
-                        <div class="field col-10 md:col-4 p-3">
+                        <div class="field col-12 md:col-8 p-3">
                             <span class="p-float-label">
                                 <input type="text" pInputText class="w-full"  maxlength="100"> 
                                 <label for="float-input" class="obrigatorio">Nome de tratamento</label>
@@ -148,8 +148,8 @@
     </p-tabPanel>
         <p-tabPanel header="Header II">
             <ng-template pTemplate = "header">
-                <i class="pi pi-user"></i>
-                <span>Pessoa Juridica</span>
+                <i class="pi pi-user" style="padding: 1em;"></i>
+                <span>Pessoa Jurídica</span>
             </ng-template>
             <div class="formgrid grid">
 
@@ -159,18 +159,16 @@
                     <label for="float-input" class="obrigatorio">Número interno</label>
                 </span>
             </div>
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
-                    <label for="icon">Data de Cadastro</label>
-                </span>
-            </div>
-
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Nome de tratamento</label>
+                </span>
+            </div>
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+                    <label for="icon">Data de Cadastro</label>
                 </span>
             </div>
 

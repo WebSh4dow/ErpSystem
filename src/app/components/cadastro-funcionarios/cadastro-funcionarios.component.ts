@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -37,7 +38,8 @@ interface Profissao {
 
 @Component({
   selector: 'app-cadastro-funcionarios',
-  templateUrl: './cadastro-funcionarios.component.html'
+  templateUrl: './cadastro-funcionarios.component.html',
+  styleUrls: ['./cadastro-funcionarios.scss']
 })
 
  

@@ -51,9 +51,16 @@
 
             <div class="field col-12 md:col-6 p-3">
                 <div class="p-inputgroup">
-                    <input [disabled]="true"  type="text" pInputText placeholder="Cargo">   
-                    <button (click)="showModalDialogCargo()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                    <input [disabled]="true"  type="text" pInputText placeholder="Cargo">
+                       
+                    <button (click)="showModalDialogCargo()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                        
+                    </button>      
+                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>
                 </div>
+
+                
+               
           
           <p-dialog header="Pesquisa de Cargos" [(visible)]="displayModalCargo" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
@@ -115,7 +122,8 @@
             <div class="field col-12 md:col-3 p-3">
                 <div class="p-inputgroup">
                     <input [disabled]="true"  type="text" pInputText placeholder="Filial">   
-                    <button (click)="showModalDialog()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                    <button (click)="showModalDialog()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>     
                 </div>
                 <p-dialog header="Pesquisa de Filiais" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
@@ -183,7 +191,8 @@
         <div class="field col-12 md:col-3 p-3">
                 <div class="p-inputgroup" style="color:black">
                     <input [disabled]="true"  type="text" pInputText placeholder="Naturalidade">   
-                    <button (click)="showModalDialogNaturalidade()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                    <button (click)="showModalDialogNaturalidade()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>      
                 </div>
                 <p-dialog header="Pesquisa de Naturalidades" [(visible)]="displayModalNaturalidade" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
@@ -251,7 +260,8 @@
             <div class="field col-12 md:col-6 p-3">
                 <div class="p-inputgroup">
                     <input type="text" [disabled]="true"  pInputText placeholder="Setor">   
-                    <button (click)="showModalDialogSetor()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                    <button (click)="showModalDialogSetor()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>  
                 </div>
                 <p-dialog header="Pesquisa de Setores" [(visible)]="displayModalSetores" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
@@ -312,7 +322,8 @@
             <div class="field col-12 md:col-3 p-3">
                 <div class="p-inputgroup">
                     <input type="text"  [disabled]="true"  pInputText placeholder="Gerente">   
-                    <button type="button" (click)="showModalDialogGerente()" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                    <button type="button" (click)="showModalDialogGerente()" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>      
                 </div>
                 <p-dialog header="Pesquisa de Gerentes" [(visible)]="displayModalGerentes" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
@@ -377,8 +388,9 @@
 
             <div class="field col-12 md:col-3 p-3">
                 <div  class="p-inputgroup">
-                    <input type="text" [disabled]="true"  pInputText placeholder="Profissão">   
-                    <button type="button" (click)="showModalDialogProfissao()" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
+                    <input type="text" [disabled]="true"  pInputText placeholder="Profissão" style="color: black;">   
+                    <button type="button" (click)="showModalDialogProfissao()" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>      
                 </div>
 
                 <p-dialog header="Pesquisa de Profissões" [(visible)]="displayModalProfissao" [modal]="true" [style]="{width: '50vw'}"

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-
+import { MatIconModule } from '@angular/material/icon'
 import { MatTableModule } from '@angular/material/table'  
 
 import { AppLayoutModule } from './layout/app.layout.module';
@@ -215,7 +215,8 @@ import { CadastroFuncionariosComponent } from './components/cadastro-funcionario
     FileUploadModule,
     HttpClientModule,
     CheckboxModule,
-    DialogModule
+    DialogModule,
+    MatIconModule
 
    
     

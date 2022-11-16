@@ -31,23 +31,7 @@ export class CaixasConfiguracoesComponent implements OnInit  {
       this.displayModal = true;
   }
 
-  showBasicDialog() {
-      this.displayBasic = true;
-  }
-
-  showBasicDialog2() {
-      this.displayBasic2 = true;
-  }
-
-  showMaximizableDialog() {
-      this.displayMaximizable = true;
-  }
-
-  showPositionDialog(position: string) {
-      this.position = position;
-      this.displayPosition = true;
-  }
-
+  
   ngOnInit(): void {
     this.cols = [
       { field: 'descricao', header: 'descricao' },

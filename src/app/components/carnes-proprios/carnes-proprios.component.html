@@ -150,32 +150,30 @@
 </div>
 
 <br>
-<h2>Opções de Impressão</h2>
-<div class="card shadow-3 mt-4 mb-4 p-0">
-  <h1></h1>
+  <p-fieldset legend="Opções de impressões" [toggleable]="true">
 
-
-    <div class="field col-10 md:col-8 p-3">
+      <div class="field col-10 md:col-12 p-3">
         <span class="p-float-label">
             <input type="text" pInputText class="w-full"  maxlength="100"> 
             <label for="float-input" class="obrigatorio">Mensagem</label>
         </span>
     </div>
 
+    <div class="field col-12 p-3">
+      <span class="p-float-label">
+          <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
+          <label for="float-input" class="obrigatorio">Ordem</label>
+      </span>
+  </div> 
+   
+    </p-fieldset>
 
-<div class="field col-12 p-3">
-    <span class="p-float-label">
-        <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
-        <label for="float-input" class="obrigatorio">Ordem</label>
-    </span>
-</div> 
+    <div class="field col-8 md:col-12 p-5">
+      <button pButton pRipple type="button" label="Limpar" class="p-button-raised  p-button-text" style="margin-right: 5px;"></button>
+      <button pButton pRipple type="button" label="imprimir" class="p-button-raised  p-button-text"></button>
+    </div> 
+    
 
-</div>
-
-<button pButton pRipple type="button" label="Limpar" class="p-button-raised  p-button-text"></button>
-
-
-<button pButton pRipple type="button" label="Imprimir" class="p-button-raised  p-button-text"></button>
 
 
 

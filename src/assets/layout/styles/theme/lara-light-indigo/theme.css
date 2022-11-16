@@ -4145,12 +4145,11 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-panel .p-panel-header {
-  border: 1px solid #dee2e6;
-  padding: 1.25rem;
+  border: 1px solid #d7d7d7;
   background: #f8f9fa;
   color: #343a40;
-  /* border-top-right-radius: 6px; */
-  /* border-top-left-radius: 6px; */
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 .p-panel .p-panel-header .p-panel-title {
   font-weight: 700;

@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cadastro-planos-clientes',
-  templateUrl: './cadastro-planos-clientes.component.html'
+  templateUrl: './cadastro-planos-clientes.component.html',
+  styleUrls:['./cadastro-planos-clientes.scss']
 })
 export class CadastroPlanosClientesComponent implements OnInit {
 

@@ -7,13 +7,153 @@
         <p-breadcrumb [model]="items"></p-breadcrumb>
     </div>
 </div>
-<div class="container-npiauto mt-4 mb-4 shadow-2">
-    <p-panel>
-        <ng-template pTemplate="header">
-        </ng-template>       
-        <div class="formgrid grid">
 
-            <div class="field col-12 md:col-2 p-3">
+<div class="card">
+    <p-tabView styleClass="tabview-custom">
+        <p-tabPanel>
+            <ng-template pTemplate = "header">
+                <i class="pi pi-user"></i>
+                <span>Pessoa Física</span>
+            </ng-template>
+            
+               
+                        
+                    <div class="formgrid grid">
+            
+                        <div class="field col-12 md:col-3 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Número interno</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-6 p-3">
+                            <span class="p-float-label">
+                                <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+                                <label for="icon">Data de Cadastro</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-8 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Nome</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Nome do Pai</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-10 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Nome de tratamento</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Nome da mãe</label>
+                            </span>
+                        </div>
+            
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-inputMask mask=" 99.999.999-9"  class="w-full"></p-inputMask>
+                                <label for="float-input" class="obrigatorio">RG</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Orgão Expedidor</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-inputMask mask="999.999.999-99"  class="w-full"></p-inputMask>
+                                <label for="float-input" class="obrigatorio">CPF</label>
+                            </span>
+                        </div>
+                       
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Nacionalidade</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                <label for="float-input" class="obrigatorio">Email</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
+                                <label for="float-input" class="obrigatorio">Tipo Sanguíneo</label>
+                            </span>
+                        </div> 
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-dropdown [options]="sexo" optionLabel="name" class="w-full"></p-dropdown>
+                                <label for="float-input" class="obrigatorio">Sexo</label>
+                            </span>
+                        </div> 
+                       <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                                <label for="icon">Data de Falecimento</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+                                <label for="icon">Data de Nascimento</label>
+                            </span>
+                        </div>
+                      <div class="field col-12 md:col-10 p-3">
+                            <span class="p-float-label">
+                                <textarea rows="5" cols="95" pInputTextarea></textarea>
+                                <label for="float-input" class="obrigatorio">Observação</label>
+                            </span>
+                        </div> 
+            
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <label for="float-input" class="obrigatorio">Ver Observação?</label>
+                            <span class="p-float-label"> 
+                        <p-selectButton [options]="selectStatus2" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
+                        
+                    </span>
+                </div>
+            </div>
+                    <ng-template pTemplate="footer">
+                        <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
+                    </ng-template>  
+                
+            
+    </p-tabPanel>
+        <p-tabPanel header="Header II">
+            <ng-template pTemplate = "header">
+                <i class="pi pi-user"></i>
+                <span>Pessoa Juridica</span>
+            </ng-template>
+            <div class="formgrid grid">
+
+            <div class="field col-12 md:col-3 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Número interno</label>
@@ -27,6 +167,13 @@
                 </span>
             </div>
 
+            <div class="field col-12 md:col-4 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Nome de tratamento</label>
+                </span>
+            </div>
+
             <div class="field col-12 md:col-8 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
@@ -36,126 +183,57 @@
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Nome do Pai</label>
-                </span>
-            </div>
-
-            <div class="field col-10 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Nome de tratamento</label>
-                </span>
-            </div>
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Nome da mãe</label>
+                    <p-inputMask mask="99.999.999/9999-99" class="w-full"></p-inputMask>
+                    <label for="float-input" class="obrigatorio">CNPJ</label>
                 </span>
             </div>
 
 
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full" mask="9999999999-9"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">RG</label>
-                </span>
-            </div>
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Orgão Expedidor</label>
-                </span>
-            </div>
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full" mask="999.999.999-99"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">CPF</label>
-                </span>
-            </div>
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Nacionalidade</label>
-                </span>
-            </div>
-
-            <div class="field col-12 md:col-4 p-3">
+            <div class="field col-12 md:col-8 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Email</label>
                 </span>
             </div>
 
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
-                    <label for="float-input" class="obrigatorio">Tipo Sanguíneo</label>
-                </span>
-            </div> 
-
             
 
-            <div class="field col-12 md:col-4 p-3">
+            <div class="field col-10 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-dropdown [options]="sexo" optionLabel="name" class="w-full"></p-dropdown>
-                    <label for="float-input" class="obrigatorio">Sexo</label>
-                </span>
-            </div> 
-            
-
-            <div *ngFor="let status of selectStatus" class="field-checkbox">
-                <p-radioButton [inputId]="status.key" name="status" [value]="status" [(ngModel)]="selectPessoa" [disabled]="status.key === 'R'"></p-radioButton>
-                <label [for]="status.key">{{status.value}}</label>
-                
-            </div>
-
-            
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
-                    <label for="icon">Data de Falecimento</label>
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">inscrição</label>
                 </span>
             </div>
-
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
-                    <label for="icon">Data de Nascimento</label>
-                </span>
-            </div>
-
-       
-
-            <div class="field col-12 md:col-10 p-3">
-                <span class="p-float-label">
-                    <textarea rows="5" cols="100" pInputTextarea></textarea>
-                    <label for="float-input" class="obrigatorio">Observação</label>
-                </span>
-            </div> 
-
-
-            <div class="field col-12 md:col-4 p-3">
-                <label for="float-input" class="obrigatorio">Ver Observação?</label>
-                <span class="p-float-label"> 
-            <p-selectButton [options]="selectStatus2" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
-            
+        </div>
+        <div class="field col-12 md:col-4 p-3">
+            <label for="float-input" class="obrigatorio">Ver Observação?</label>
+            <span class="p-float-label"> 
+        <p-selectButton [options]="selectStatus2" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
+        
         </span>
+        </div>
+
+        <div class="field col-12 md:col-10 p-3">
+            <span class="p-float-label">
+                <textarea rows="5" cols="95" pInputTextarea></textarea>
+                <label for="float-input" class="obrigatorio">Observação</label>
+            </span>
+        </div> 
+
+ 
+<p-fileUpload
+  name="myfile[]"
+  accept="image/*">
+ </p-fileUpload>
+ <small class="text-left"> Arraste a imagem aqui ou selecione </small>
+<br>
+ <ng-template pTemplate="footer">
+    <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
+</ng-template> 
+</p-tabPanel>
+        
+    </p-tabView>
     </div>
-</div>
-        <ng-template pTemplate="footer">
-            <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
-        </ng-template>  
-    </p-panel>
-</div>
-
-
-
 
 
 

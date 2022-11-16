@@ -31,7 +31,7 @@ import {TableModule} from 'primeng/table';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import {TabViewModule} from 'primeng/tabview';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from "@angular/common/http";
@@ -217,7 +217,8 @@ import { CadastroFuncionariosComponent } from './components/cadastro-funcionario
     CheckboxModule,
     DialogModule,
     MatIconModule,
-    FieldsetModule
+    FieldsetModule,
+    TabViewModule
 
    
     

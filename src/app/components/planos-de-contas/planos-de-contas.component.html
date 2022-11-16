@@ -18,9 +18,7 @@
   <p-table [responsive]="true" [rows]="5" [paginator]="true" class="w-100"#myTab [value]="tableData" [scrollable]="false" 
   [globalFilterFields]="['id', 'descricao','sigla']">
             <ng-template pTemplate="header">
-             
-               
-                <tr>
+                 <tr>
                   <th>ID</th>
                   <th>Descrição</th>
                   <th>Ordem</th>
@@ -54,10 +52,8 @@
                         <span class="p-column-title">Status</span>
                         {{ planos.status}}
                       </td>
-
-                   
-                    
-                    <td class="col-acoes p-1 justify-content-between">
+                      
+                      <td class="col-acoes p-1 justify-content-between">
                       <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
                       styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
                       [routerLink]="['/planos-de-contas', planos.id]"></a>
@@ -65,6 +61,7 @@
                       styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
                       ></button>
                     </td>
+                    
                   </tr>
             </ng-template>
         <ng-template  pTemplate="emptymessage">

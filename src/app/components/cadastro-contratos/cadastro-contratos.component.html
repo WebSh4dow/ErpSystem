@@ -35,21 +35,21 @@
                 </span>
             </div>
             
-            <div class="field col-10 md:col-4 p-3">
+            <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data de Admissão</label>
                 </span>
             </div>
 
-            <div class="field col-10 md:col-4 p-3">
+            <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data de Vencimento</label>
                 </span>
             </div>
 
-            <div class="field col-10 md:col-4 p-3">
+            <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data da carência</label>
@@ -79,14 +79,7 @@
             </div>
 
            
-              <h2>Cobrança</h2>
-
-            <div class="field col-12 md:col-8 p-3">
-                <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
-                    <label for="float-input" class="obrigatorio">Cobrador</label>
-                </span>
-            </div>
+        <p-fieldset legend="Cobrança" [toggleable]="true" style="width: 100%;">
 
             <div class="field col-12 p-3">
                 <span class="p-float-label">
@@ -94,36 +87,49 @@
                     <label for="icon">Data de Vencimento</label>
                 </span>
             </div>
-            <div class="field col-2 p-3">
+
+            <div class="field col-12 md:col-12 p-3">
+                <span class="p-float-label">
+                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <label for="float-input" class="obrigatorio">Cobrador</label>
+                </span>
+            </div>
+
+            <div class="field col-12 md:col-12 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="nota" optionLabel="name" ></p-dropdown>
                     <label for="float-input" class="obrigatorio">Gerar Nota Fiscal?</label>
                 </span>
             </div>
 
-            <div class="field col-4 p-3">
+            <div class="field col-12 md:col-12 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="cobranca" optionLabel="name" ></p-dropdown>
                     <label for="float-input" class="obrigatorio">Tipo de Cobrança</label>
                 </span>
             </div>
-            
-        <h2>Adesão</h2>
+        </p-fieldset>
+<br>
 
-            <div class="field col-12 p-3">
+
+        <p-fieldset legend="Adesão" [toggleable]="true" style="width: 100%;"> 
+
+            <div class="field col-12 md:col-8 p-3">
                 <span class="p-float-label">
                     <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Vencimento da Adesão</label>
                 </span>
             </div> 
 
-            <div class="field col-4 p-3">
+            <div class="field col-12 md:col-12 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="nota" optionLabel="name" ></p-dropdown>
                     <label for="float-input" class="obrigatorio">Cobrar Adesão?</label>
                 </span>
             </div>
-        </div>
+        </p-fieldset>
+
+    </div>
         <ng-template pTemplate="footer">
             <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
         </ng-template>  

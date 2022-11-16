@@ -12,7 +12,7 @@ import { AppLayoutModule } from './layout/app.layout.module';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-
+import {FieldsetModule} from 'primeng/fieldset';
 import {CalendarModule} from 'primeng/calendar';
 import {PanelModule} from 'primeng/panel';
 import {InputTextModule} from 'primeng/inputtext';
@@ -216,7 +216,8 @@ import { CadastroFuncionariosComponent } from './components/cadastro-funcionario
     HttpClientModule,
     CheckboxModule,
     DialogModule,
-    MatIconModule
+    MatIconModule,
+    FieldsetModule
 
    
     

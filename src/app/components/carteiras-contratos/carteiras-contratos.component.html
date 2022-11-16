@@ -126,11 +126,9 @@
          </ng-template>
     </p-table>
 </div>
-<h2>Opções de impressões</h2>
-<div class="card shadow-3 mt-4 mb-4 p-0">
 
-
-<div class="field col-2 md:col-12 p-5">
+<p-fieldset legend="Opções de impressões" [toggleable]="true">
+  <div class="field col-2 md:col-12 p-5">
     <span class="p-float-label">
         <p-dropdown [options]="register" optionLabel="name" class="w-full"></p-dropdown>
         <label for="float-input" class="obrigatorio">Registrar Impressão?</label>
@@ -143,9 +141,11 @@
         <label for="float-input" class="obrigatorio">Imprimir Grau de Parentesco?</label>
     </span>
 </div> 
-</div>
-<div class="card shadow-3 mt-4 mb-4 p-0">
-<div class="field col-12 md:col-12 p-5">
+</p-fieldset>
+
+<br>
+<p-fieldset legend="Opções de impressões" [toggleable]="true">
+  <div class="field col-12 md:col-12 p-5">
     <span class="p-float-label">
         <p-dropdown [options]="fonte" optionLabel="name" class="w-full"></p-dropdown>
         <label for="float-input" class="obrigatorio">Tamanho da Fonte</label>
@@ -159,10 +159,18 @@
         <label for="float-input" class="obrigatorio">Ordem</label>
     </span>
 </div> 
-</div>
-    <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
-    <button pButton pRipple type="button" label="Imprimir" class="p-button-raised  p-button-text"></button>
 
+
+</p-fieldset>
+
+
+<div class="field col-8 md:col-12 p-5">
+  <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
+  <button pButton pRipple type="button" label="Imprimir" class="p-button-raised  p-button-text"></button>
+</div> 
+
+
+   
 
 
  

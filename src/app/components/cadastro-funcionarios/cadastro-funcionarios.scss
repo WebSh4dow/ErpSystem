@@ -24,7 +24,7 @@
         margin-bottom: .5rem;
 
         &:not(.p-button-icon-only) {
-            display: flex;
+            display: inline-table;
             width: 100%;
         }
     }

@@ -49,6 +49,8 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   sexo: any = [];
 
+  uf: any = [];
+
   selectStatus:any =[]
 
   maxDate: Date;
@@ -115,10 +117,21 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   displayModalCargoCadastro:boolean
 
+  displayModalCargoProfissao:boolean
+
+  displayModalCadastroFiliais: boolean
+
+  displayModalCadastroNaturalidade:boolean
+
   constructor() {
     this.sexo.push({name:'Selecione o sexo', value: 0});
     this.sexo.push({name:'MASCULINO', value: 1});
     this.sexo.push({name:'FEMININO', value: 2});
+
+    this.uf.push({name:'CE', value: 0})
+    this.uf.push({name:'PE', value: 1})
+    this.uf.push({name:'SP', value: 2})
+    this.uf.push({name:'RJ', value: 3})
 
     this.selectStatus = [{label:' Ativo',value:'ativo'},{label:'Inativo',value:'inativo'}]
 
@@ -236,6 +249,18 @@ this.colsGerentes = [
 
 showModalDialogCadastroCargo() {
   this.displayModalCargoCadastro = true;
+}
+
+showModalDialogCadastroProfissao() {
+  this.displayModalCargoProfissao = true;
+}
+
+showModalDialogCadastroFiliais(){
+  this.displayModalCadastroFiliais = true;
+}
+
+showModalDialogCadastroNaturalidade(){
+  this.displayModalCadastroNaturalidade = true;
 }
 
 

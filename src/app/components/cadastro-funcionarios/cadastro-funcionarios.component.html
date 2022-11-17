@@ -12,7 +12,6 @@
         <ng-template pTemplate="header">
         </ng-template>       
         <div class="formgrid grid">
-
             <div class="field col-12 md:col-8 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
@@ -87,10 +86,7 @@
                             <button pButton pRipple type="button" (click)="displayModalCargoCadastro=false" label="Salvar" class="p-button-raised  p-button-text"></button>
 
                         </ng-template>  
-                    
-                
-
-                </p-dialog>
+                    </p-dialog>
 
             <p-dialog header="Pesquisa de Cargos" [(visible)]="displayModalCargo" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
@@ -153,9 +149,40 @@
                 <div class="p-inputgroup">
                     <input [disabled]="true"  type="text" pInputText placeholder="Filial">   
                     <button (click)="showModalDialog()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
-                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>     
+                    <button pButton pRipple type="button"  (click)="showModalDialogCadastroFiliais()" label="+" styleClass="p-button-warn"></button>     
                 </div>
-                <p-dialog header="Pesquisa de Filiais" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+              <p-dialog header="Cadastro de Filiais" [(visible)]="displayModalCadastroFiliais" [modal]="true" [style]="{width: '50vw'}"
+                [draggable]="false" [resizable]="false">  
+                 <div class="grid  md:justify-content-between">
+                    <div class="col-12 md:col-8">
+                        <small class="text-left"> * - para campos obrigatórios</small>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <p-breadcrumb [model]="items"></p-breadcrumb>
+                    </div>
+                </div>
+                     <div class="formgrid grid">
+                            <div class="field col-12 md:col-12 p-3">
+                                <span class="p-float-label">
+                                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                    <label for="float-input" class="obrigatorio">Nome Fantasia</label>
+                                </span>
+                            </div>
+
+                            <div class="field col-12 md:col-12 p-3">
+                                <span class="p-float-label">
+                                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                    <label for="float-input" class="obrigatorio">Sigla</label>
+                                </span>
+                            </div>
+                        </div>
+                        <ng-template pTemplate="footer">
+                            <button pButton pRipple type="button" (click)="displayModalCadastroFiliais=false" label="Salvar" class="p-button-raised  p-button-text"></button>
+
+                        </ng-template>  
+                    </p-dialog>
+
+    <p-dialog header="Pesquisa de Filiais" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
   
  <div class="flex justify-content-between">
@@ -222,8 +249,49 @@
                 <div class="p-inputgroup" style="color:black">
                     <input [disabled]="true"  type="text" pInputText placeholder="Naturalidade">   
                     <button (click)="showModalDialogNaturalidade()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
-                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>      
+                    <button pButton pRipple type="button"(click)="showModalDialogCadastroNaturalidade()" label="+" styleClass="p-button-warn"></button>      
                 </div>
+
+                <p-dialog header="Cadastro de Filiais" [(visible)]="displayModalCadastroNaturalidade" [modal]="true" [style]="{width: '50vw'}"
+                [draggable]="false" [resizable]="false">  
+                 <div class="grid  md:justify-content-between">
+                    <div class="col-12 md:col-8">
+                        <small class="text-left"> * - para campos obrigatórios</small>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <p-breadcrumb [model]="items"></p-breadcrumb>
+                    </div>
+                </div>
+                     <div class="formgrid grid">
+                            <div class="field col-12 md:col-12 p-3">
+                                <span class="p-float-label">
+                                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                    <label for="float-input" class="obrigatorio">Descrição</label>
+                                </span>
+                            </div>
+
+                            <div class="field col-12 md:col-12 p-3">
+                                <span class="p-float-label">
+                                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                    <label for="float-input" class="obrigatorio">Código Municipio</label>
+                                </span>
+                            </div>
+
+                            <div class="field col-12 md:col-12 p-3">
+                                <span class="p-float-label">
+                                    <p-dropdown [options]="uf" optionLabel="name" class="w-full"></p-dropdown>
+                                    <label for="float-input" class="obrigatorio">UF</label>
+                                </span>
+                            </div> 
+                        </div>
+                        <ng-template pTemplate="footer">
+                            <button pButton pRipple type="button" (click)="displayModalCadastroNaturalidade=false" label="Salvar" class="p-button-raised  p-button-text"></button>
+
+                        </ng-template>  
+                    </p-dialog>
+
+
+
                 <p-dialog header="Pesquisa de Naturalidades" [(visible)]="displayModalNaturalidade" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
 
@@ -379,8 +447,7 @@
                               <tr>
                                  <th>Nome </th>
                                  <th>Nome de Tratamento </th>
-                                
-                                 <th class="col-acoes-header"></th>
+                                <th class="col-acoes-header"></th>
                               </tr>
                             </ng-template>
                             <ng-template pTemplate="body" let-cargos>
@@ -420,8 +487,38 @@
                 <div  class="p-inputgroup">
                     <input type="text" [disabled]="true"  pInputText placeholder="Profissão" style="color: black;">   
                     <button type="button" (click)="showModalDialogProfissao()" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
-                    <button pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>      
+                    <button pButton pRipple type="button" (click)="showModalDialogCadastroProfissao()" label="+" styleClass="p-button-warn"></button> 
+                         
                 </div>
+
+                <p-dialog header="Cadastro de Profissões" [(visible)]="displayModalCargoProfissao" [modal]="true" [style]="{width: '50vw'}"
+                [draggable]="false" [resizable]="false">  
+            
+                <div class="grid  md:justify-content-between">
+                    <div class="col-12 md:col-8">
+    
+                        <small class="text-left"> * - para campos obrigatórios</small>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <p-breadcrumb [model]="items"></p-breadcrumb>
+                    </div>
+                </div>
+               
+                   <div class="formgrid grid">
+                            <div class="field col-12 md:col-12 p-3">
+                                <span class="p-float-label">
+                                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                                    <label for="float-input" class="obrigatorio">Descrição</label>
+                                </span>
+                            </div>
+                        </div>
+                        <ng-template pTemplate="footer">
+                            <button pButton pRipple type="button" (click)="displayModalCargoProfissao=false" label="Salvar" class="p-button-raised  p-button-text"></button>
+
+                        </ng-template>  
+                    </p-dialog>
+
+                
 
                 <p-dialog header="Pesquisa de Profissões" [(visible)]="displayModalProfissao" [modal]="true" [style]="{width: '50vw'}"
                 [draggable]="false" [resizable]="false">
@@ -479,19 +576,21 @@
             </p-dialog>
             </div>
           
-            <div class="field col-12 md:col-4 p-3">
-                <span class="p-float-label">
-                    <p-inputMask mask="9999999999-9" class="w-full"></p-inputMask>
-                    <label for="float-input" class="obrigatorio">PIS</label>
-                </span>
-            </div>
-
+    
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Orgão Expedidor</label>
                 </span>
             </div>
+
+            <div class="field col-10 md:col-4 p-3">
+                <span class="p-float-label">
+                    <p-inputMask mask="9999999999-9" class="w-full"></p-inputMask>
+                    <label for="float-input" class="obrigatorio">PIS</label>
+                </span>
+            </div>
+
             
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">

@@ -113,6 +113,8 @@ export class CadastroFuncionariosComponent implements OnInit {
 
   value1 :string= "ativo"
 
+  displayModalCargoCadastro:boolean
+
   constructor() {
     this.sexo.push({name:'Selecione o sexo', value: 0});
     this.sexo.push({name:'MASCULINO', value: 1});
@@ -228,7 +230,14 @@ this.colsGerentes = [
 
 ];
 
+
+
 }
+
+showModalDialogCadastroCargo() {
+  this.displayModalCargoCadastro = true;
+}
+
 
 showModalDialog() {
     this.displayModal = true;

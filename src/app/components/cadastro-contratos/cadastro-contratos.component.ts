@@ -22,6 +22,14 @@ export class CadastroContratosComponent implements OnInit {
 
   date1!: Date;
 
+  date2!: Date;
+
+  date3!: Date;
+
+  date4!: Date;
+
+  date5!: Date;
+
   minDate: Date;
 
   maxDate: Date;
@@ -31,6 +39,8 @@ export class CadastroContratosComponent implements OnInit {
   escolha:string;
 
   selectPessoa:any = null;
+
+  displayModalCargo: boolean;
 
   invalidDates: Array<Date>
   value = 0;
@@ -101,6 +111,5 @@ export class CadastroContratosComponent implements OnInit {
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
   }
-
-
+ 
 }

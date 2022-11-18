@@ -107,6 +107,8 @@ import { RecebimentosConfiguracoesComponent } from './components/recebimentos-co
 import { CaixasConfiguracoesComponent } from './components/caixas-configuracoes/caixas-configuracoes.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { CadastroFuncionariosComponent } from './components/cadastro-funcionarios/cadastro-funcionarios.component';
+import { AtualizarClienteComponent } from './components/atualizar-cliente/atualizar-cliente.component';
+import { AtualizarContratosComponent } from './components/atualizar-contratos/atualizar-contratos.component';
 
 @NgModule({
   declarations: [
@@ -179,6 +181,8 @@ import { CadastroFuncionariosComponent } from './components/cadastro-funcionario
     CaixasConfiguracoesComponent,
     FuncionariosComponent,
     CadastroFuncionariosComponent,
+    AtualizarClienteComponent,
+    AtualizarContratosComponent,
     
     
    

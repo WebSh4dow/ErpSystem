@@ -35,11 +35,74 @@
                 <div class="p-inputgroup">
                     <input [disabled]="true"  type="text" pInputText placeholder="Supervisor">
                        
-                    <button (click)="showModalCobrador()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                    <button (click)="showModalSupervisor()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
                         
                     </button>      
                 </div>
             </div>
+
+            <p-dialog header="Pesquisa de Suervisores" [(visible)]="displayModalSupervisor" [modal]="true" [style]="{width: '50vw'}"
+            [draggable]="false" [resizable]="false">  
+
+            <div class="flex justify-content-between">
+            </div>
+            <div style="text-align: left">
+              <i class="" 
+                 style="margin:4px 4px 0 0"> </i>
+              <input type="text" pInputText 
+                     size="70" 
+                     placeholder="Pesquisar"
+                     (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                     style="width:fit-content" />
+            </div>
+            <div class="card shadow-3 mt-4 mb-4 p-0">
+              <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+              #myTab [value]="" 
+              [scrollable]="false" 
+              [globalFilterFields]=
+              "['descricao']" [paginator]="true" class="w-100">
+                        <ng-template pTemplate="header">
+                          <tr>
+                            <th>Nome</th>  
+                            <th>Nome de tratamento</th>                            
+                          
+                             <th class="col-acoes-header"></th>
+                          </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-clientes>
+                            <tr>
+                                <td [style]="{'width': '900px'}">
+                                  <span class="p-column-title">Nome</span>
+                                  {{ clientes.descricao}}
+                                </td>
+
+                                <td [style]="{'width': '900px'}">
+                                    <span class="p-column-title">Nome de Tratamento</span>
+                                    {{ clientes.descricao}}
+                                  </td>
+                            </tr>
+                        </ng-template>
+        
+                    <ng-template  pTemplate="emptymessage">
+                          <tr>
+                            <td colspan="20">
+                              <span>Nenhum registro encontrado</span>
+                            </td>
+                          </tr>
+                    </ng-template>
+                     <ng-template pTemplate="summary">
+                          <div class="">
+                              Totalizador: 0
+                          </div>
+                     </ng-template>
+                </p-table>
+            </div>
+        <ng-template pTemplate="footer">
+                <p-button icon="pi pi-check" (click)="displayModalSupervisor=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                </ng-template>
+            
+            </p-dialog>
+
 
             
 
@@ -114,11 +177,73 @@
                 <div class="p-inputgroup">
                     <input [disabled]="true"  type="text" pInputText placeholder="Vendedor">
                        
-                    <button (click)="showModalCobrador()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                    <button (click)="showModalVendedor()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
                         
                     </button>      
                 </div>
             </div>
+
+            <p-dialog header="Pesquisa de Vendedores" [(visible)]="displayModalVendedor" [modal]="true" [style]="{width: '50vw'}"
+            [draggable]="false" [resizable]="false">  
+
+            <div class="flex justify-content-between">
+            </div>
+            <div style="text-align: left">
+              <i class="" 
+                 style="margin:4px 4px 0 0"> </i>
+              <input type="text" pInputText 
+                     size="70" 
+                     placeholder="Pesquisar"
+                     (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                     style="width:fit-content" />
+            </div>
+            <div class="card shadow-3 mt-4 mb-4 p-0">
+              <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+              #myTab [value]="" 
+              [scrollable]="false" 
+              [globalFilterFields]=
+              "['descricao']" [paginator]="true" class="w-100">
+                        <ng-template pTemplate="header">
+                          <tr>
+                            <th>Nome</th>
+                            <th>Nome de tratamento</th>                            
+                            
+                             <th class="col-acoes-header"></th>
+                          </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-clientes>
+                            <tr>
+                                <td [style]="{'width': '900px'}">
+                                  <span class="p-column-title">Nome</span>
+                                  {{ clientes.descricao}}
+                                </td>
+
+                                <td [style]="{'width': '900px'}">
+                                    <span class="p-column-title">Nome de tratamento</span>
+                                    {{ clientes.descricao}}
+                                  </td>
+                            </tr>
+                        </ng-template>
+        
+                    <ng-template  pTemplate="emptymessage">
+                          <tr>
+                            <td colspan="20">
+                              <span>Nenhum registro encontrado</span>
+                            </td>
+                          </tr>
+                    </ng-template>
+                     <ng-template pTemplate="summary">
+                          <div class="">
+                              Totalizador: 0
+                          </div>
+                     </ng-template>
+                </p-table>
+            </div>
+        <ng-template pTemplate="footer">
+                <p-button icon="pi pi-check" (click)="displayModalVendedor=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                </ng-template>
+            
+            </p-dialog>
 
             
 
@@ -249,6 +374,69 @@
                             
                         </button>      
                     </div>
+
+                    <p-dialog header="Pesquisa de Cobradores" [(visible)]="displayModalCobrador" [modal]="true" [style]="{width: '50vw'}"
+                    [draggable]="false" [resizable]="false">  
+        
+                    <div class="flex justify-content-between">
+                    </div>
+                    <div style="text-align: left">
+                      <i class="" 
+                         style="margin:4px 4px 0 0"> </i>
+                      <input type="text" pInputText 
+                             size="70" 
+                             placeholder="Pesquisar"
+                             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                             style="width:fit-content" />
+                    </div>
+                    <div class="card shadow-3 mt-4 mb-4 p-0">
+                      <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+                      #myTab [value]="" 
+                      [scrollable]="false" 
+                      [globalFilterFields]=
+                      "['descricao']" [paginator]="true" class="w-100">
+                                <ng-template pTemplate="header">
+                                  <tr>
+                                    <th>Nome</th>
+                                     <th>Nome de tratamento</th>
+                                    
+                                     <th class="col-acoes-header"></th>
+                                  </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-clientes>
+                                    <tr>
+                                        <td [style]="{'width': '900px'}">
+                                          <span class="p-column-title">Nome</span>
+                                          {{ clientes.nome}}
+                                        </td>
+                                        <td [style]="{'width': '900px'}">
+                                            <span class="p-column-title">Nome de tratamento</span>
+                                            {{ clientes.email}}
+                                          </td>
+                                    </tr>
+                                </ng-template>
+                
+                            <ng-template  pTemplate="emptymessage">
+                                  <tr>
+                                    <td colspan="20">
+                                      <span>Nenhum registro encontrado</span>
+                                    </td>
+                                  </tr>
+                            </ng-template>
+                             <ng-template pTemplate="summary">
+                                  <div class="">
+                                      Totalizador: 0
+                                  </div>
+                             </ng-template>
+                        </p-table>
+                    </div>
+                <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="displayModalCobrador=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                        </ng-template>
+                    
+                    </p-dialog>
+
+                    
                 </div>
 
                 <div class="field col-12 md:col-4 p-3">
@@ -274,6 +462,8 @@
                 </div>
         </div>
         </p-fieldset>
+
+        
 
 <br>
 

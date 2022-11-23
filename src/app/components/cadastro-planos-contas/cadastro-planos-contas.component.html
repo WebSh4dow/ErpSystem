@@ -16,7 +16,7 @@
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <input type="text" pInputText class="w-full"  maxlength="100"> 
+                    <input type="text" disabled="true" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Código</label>
                 </span>
             </div>
@@ -42,29 +42,62 @@
                 </span>
             </div> 
 
-            
-
-            <div class="field col-12 md:col-2 p-3">
+            <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="nivel" optionLabel="name" class="w-full"></p-dropdown>
                     <label for="float-input" class="obrigatorio">Nível</label>
                 </span>
             </div> 
 
-            <div class="field col-12 md:col-4 p-3">
+            <div class="field col-12 md:col-8 p-3">
                 <label for="float-input" class="obrigatorio">Status</label>
                 <span class="p-float-label"> 
             <p-selectButton [options]="selectStatus" [(ngModel)]="value1" optionLabel="label" optionValue="value" class="w-full"></p-selectButton>
             
         </span>
+
     </div>
 
-            
-             
+     
+
+            <p-fieldset legend="Último cadastrado" [toggleable]="true" style="width: 100%;">
+
+                <div class="field col-12 md:col-12 p-3">
+                    <span class="p-float-label">
+                        <input type="text" pInputText class="w-full" disabled = "true"  maxlength="100"> 
+                        <label for="float-input" class="obrigatorio">Descrição</label>
+                    </span>
+                </div>
+
+
+                <div class="field col-12 md:col-12 p-3">
+                    <span class="p-float-label">
+                        <input type="text" pInputText class="w-full" disabled = "true"  maxlength="100"> 
+                        <label for="float-input" class="obrigatorio">Nível</label>
+                    </span>
+                </div>
+
+
+                <div class="field col-12 md:col-12 p-3">
+                    <span class="p-float-label">
+                        <input type="text" pInputText class="w-full" disabled = "true"  maxlength="100"> 
+                        <label for="float-input" class="obrigatorio">Ordem</label>
+                    </span>
+                </div>
+        
+    
+            </p-fieldset>
+    
                 
-        </div>
-        <ng-template pTemplate="footer">
-            <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
+            </div>
+
+
+     <ng-template pTemplate="footer">
+            <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text">
+                <br>
+            </button>
+            <button pButton pRipple type="button" label="Salvar e cadastrar novo" class="p-button-raised  p-button-text"></button>
+
         </ng-template>  
     </p-panel>
 </div>

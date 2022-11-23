@@ -243,8 +243,6 @@ this.colsGerentes = [
 
 ];
 
-
-
 }
 
 showModalDialogCadastroCargo() {

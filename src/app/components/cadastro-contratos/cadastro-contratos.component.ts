@@ -40,7 +40,15 @@ export class CadastroContratosComponent implements OnInit {
 
   selectPessoa:any = null;
 
-  displayModalCargo: boolean;
+  displayModalCliente: boolean;
+  
+  displayModalPlano: boolean;
+
+  displayModalVendedor: boolean
+
+  displayModalSupervisor:boolean
+
+  displayModalCobrador: boolean
 
   invalidDates: Array<Date>
   value = 0;
@@ -90,7 +98,7 @@ export class CadastroContratosComponent implements OnInit {
     this.items = [
       {label: 'Cadastro de Contratos'},
       {label: 'Pesquisar de Contratos', routerLink: '/contratos'},
-      {label: 'Cadastrar Planos de Contas', routerLink: '/contratos/cadastro'},
+      {label: 'Atualizar Planos de Contas', routerLink: '/contratos/cadastro'},
     ];
 
     let today = new Date();
@@ -111,5 +119,25 @@ export class CadastroContratosComponent implements OnInit {
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
   }
+  showModalCliente() {
+    this.displayModalCliente = true
+  }
+
+  showModalPlanos(){
+    this.displayModalPlano = true
+  }
+
+   showModalVendedor(){
+    this.displayModalVendedor = true
+   }
+
+   showModalSupervisor(){
+    this.displayModalSupervisor = true
+   }
+
+   showModalCobrador(){
+    this.displayModalCobrador = true
+   }
+
  
 }

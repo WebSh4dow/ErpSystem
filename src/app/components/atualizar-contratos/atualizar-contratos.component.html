@@ -339,7 +339,7 @@
         
                     <div class="field col-12 md:col-4 p-3">
                         <span class="p-float-label">
-                            <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+                            <p-calendar [(ngModel)]="date2" [style]="{width: '17vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                             <label for="icon">Data da carência</label>
                         </span>
                     </div>
@@ -361,7 +361,7 @@
         
                     <div class="field col-12 md:col-4 p-3">
                         <span class="p-float-label">
-                            <p-dropdown [options]="cobranca" optionLabel="name" [style]="{width: '16vw'}" class="w-full"></p-dropdown>
+                            <p-dropdown [options]="cobranca" optionLabel="name" [style]="{width: '17vw'}" class="w-full"></p-dropdown>
                             <label for="float-input" class="obrigatorio">Tipo de Contrato</label>
                         </span>
                     </div> 
@@ -447,7 +447,7 @@
         
                         <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-dropdown [options]="cobranca" optionLabel="name" class="w-full"></p-dropdown>
+                                <p-dropdown [options]="cobranca" [style]="{width: '20vw'}" optionLabel="name" class="w-full"></p-dropdown>
                                 <label for="float-input" class="obrigatorio">Tipo de Cobrança</label>
                             </span>
                         </div>

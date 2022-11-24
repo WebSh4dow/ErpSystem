@@ -1,1 +1,817 @@
-<p>atualizar-contratos works!</p>
+<div class="grid  md:justify-content-between">
+    <div class="col-12 md:col-12">
+        <h2>Edição do Contrato de Cliente:</h2>
+        <small class="text-left"> * - para campos obrigatórios</small>
+    </div>
+  
+<div class="col-12 md:col-12">
+    <p-tabView styleClass="tabview-custom">
+        <p-tabPanel>
+            <ng-template pTemplate = "header">
+                <i class="pi pi-user" style="padding: 1em;"></i>
+                <span>Principal</span>
+            </ng-template>
+                <div class="formgrid grid">
+
+                    <div class="field col-12 md:col-2 p-3">
+                        <span class="p-float-label">
+                            <input type="text" pInputText class="w-full" disabled="true" maxlength="100"> 
+                            <label for="float-input" class="obrigatorio">Contrato</label>
+                        </span>
+                    </div>
+
+                    <div class="field col-12 md:col-12 p-3">
+                        <span class="p-float-label">
+                            <input type="text" pInputText class="w-full" disabled="true" maxlength="100"> 
+                            <label for="float-input" class="obrigatorio">Filial</label>
+                        </span>
+                    </div>
+        
+                    <div class="field col-12 md:col-12 p-3">
+                        <span class="p-float-label">
+                            <input type="text" pInputText class="w-full"  maxlength="100"> 
+                            <label for="float-input" class="obrigatorio">Origem</label>
+                        </span>
+                    </div>
+        
+        
+               
+        
+                    <div class="field col-12 md:col-6 p-3">
+                        <div class="p-inputgroup">
+                            <input [disabled]="true"  type="text" pInputText placeholder="Supervisor">
+                               
+                            <button (click)="showModalSupervisor()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                                
+                            </button>      
+                        </div>
+                    </div>
+        
+                    <p-dialog header="Pesquisa de Suervisores" [(visible)]="displayModalSupervisor" [modal]="true" [style]="{width: '50vw'}"
+                    [draggable]="false" [resizable]="false">  
+        
+                    <div class="flex justify-content-between">
+                    </div>
+                    <div style="text-align: left">
+                      <i class="" 
+                         style="margin:4px 4px 0 0"> </i>
+                      <input type="text" pInputText 
+                             size="70" 
+                             placeholder="Pesquisar"
+                             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                             style="width:fit-content" />
+                    </div>
+                    <div class="card shadow-3 mt-4 mb-4 p-0">
+                      <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+                      #myTab [value]="" 
+                      [scrollable]="false" 
+                      [globalFilterFields]=
+                      "['descricao']" [paginator]="true" class="w-100">
+                                <ng-template pTemplate="header">
+                                  <tr>
+                                    <th>Nome</th>  
+                                    <th>Nome de tratamento</th>                            
+                                  
+                                     <th class="col-acoes-header"></th>
+                                  </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-clientes>
+                                    <tr>
+                                        <td [style]="{'width': '900px'}">
+                                          <span class="p-column-title">Nome</span>
+                                          {{ clientes.descricao}}
+                                        </td>
+        
+                                        <td [style]="{'width': '900px'}">
+                                            <span class="p-column-title">Nome de Tratamento</span>
+                                            {{ clientes.descricao}}
+                                          </td>
+                                    </tr>
+                                </ng-template>
+                
+                            <ng-template  pTemplate="emptymessage">
+                                  <tr>
+                                    <td colspan="20">
+                                      <span>Nenhum registro encontrado</span>
+                                    </td>
+                                  </tr>
+                            </ng-template>
+                             <ng-template pTemplate="summary">
+                                  <div class="">
+                                      Totalizador: 0
+                                  </div>
+                             </ng-template>
+                        </p-table>
+                    </div>
+                <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="displayModalSupervisor=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                        </ng-template>
+                    
+                    </p-dialog>
+        
+        
+                    
+        
+                    <div class="field col-12 md:col-6 p-3">
+                        <div class="p-inputgroup">
+                            <input [disabled]="true"  type="text" pInputText placeholder="Plano">
+                               
+                            <button (click)="showModalPlanos()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                                
+                            </button>      
+                        </div>
+                    </div>
+        
+        
+                    <p-dialog header="Pesquisa de Planos" [(visible)]="displayModalPlano" [modal]="true" [style]="{width: '50vw'}"
+                    [draggable]="false" [resizable]="false">  
+        
+                    <div class="flex justify-content-between">
+                    </div>
+                    <div style="text-align: left">
+                      <i class="" 
+                         style="margin:4px 4px 0 0"> </i>
+                      <input type="text" pInputText 
+                             size="70" 
+                             placeholder="Pesquisar"
+                             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                             style="width:fit-content" />
+                    </div>
+                    <div class="card shadow-3 mt-4 mb-4 p-0">
+                      <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+                      #myTab [value]="" 
+                      [scrollable]="false" 
+                      [globalFilterFields]=
+                      "['descricao']" [paginator]="true" class="w-100">
+                                <ng-template pTemplate="header">
+                                  <tr>
+                                    <th>Descrição</th>                            
+                                     <th class="col-acoes-header"></th>
+                                  </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-clientes>
+                                    <tr>
+                                        <td [style]="{'width': '900px'}">
+                                          <span class="p-column-title">Descrição</span>
+                                          {{ clientes.descricao}}
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                
+                            <ng-template  pTemplate="emptymessage">
+                                  <tr>
+                                    <td colspan="20">
+                                      <span>Nenhum registro encontrado</span>
+                                    </td>
+                                  </tr>
+                            </ng-template>
+                             <ng-template pTemplate="summary">
+                                  <div class="">
+                                      Totalizador: 0
+                                  </div>
+                             </ng-template>
+                        </p-table>
+                    </div>
+                <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="displayModalPlano=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                        </ng-template>
+                    
+                    </p-dialog>
+        
+        
+                    <div class="field col-12 md:col-6 p-3">
+                        <div class="p-inputgroup">
+                            <input [disabled]="true"  type="text" pInputText placeholder="Vendedor">
+                               
+                            <button (click)="showModalVendedor()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                                
+                            </button>      
+                        </div>
+                    </div>
+        
+                    <p-dialog header="Pesquisa de Vendedores" [(visible)]="displayModalVendedor" [modal]="true" [style]="{width: '50vw'}"
+                    [draggable]="false" [resizable]="false">  
+        
+                    <div class="flex justify-content-between">
+                    </div>
+                    <div style="text-align: left">
+                      <i class="" 
+                         style="margin:4px 4px 0 0"> </i>
+                      <input type="text" pInputText 
+                             size="70" 
+                             placeholder="Pesquisar"
+                             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                             style="width:fit-content" />
+                    </div>
+                    <div class="card shadow-3 mt-4 mb-4 p-0">
+                      <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+                      #myTab [value]="" 
+                      [scrollable]="false" 
+                      [globalFilterFields]=
+                      "['descricao']" [paginator]="true" class="w-100">
+                                <ng-template pTemplate="header">
+                                  <tr>
+                                    <th>Nome</th>
+                                    <th>Nome de tratamento</th>                            
+                                    
+                                     <th class="col-acoes-header"></th>
+                                  </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-clientes>
+                                    <tr>
+                                        <td [style]="{'width': '900px'}">
+                                          <span class="p-column-title">Nome</span>
+                                          {{ clientes.descricao}}
+                                        </td>
+        
+                                        <td [style]="{'width': '900px'}">
+                                            <span class="p-column-title">Nome de tratamento</span>
+                                            {{ clientes.descricao}}
+                                          </td>
+                                    </tr>
+                                </ng-template>
+                
+                            <ng-template  pTemplate="emptymessage">
+                                  <tr>
+                                    <td colspan="20">
+                                      <span>Nenhum registro encontrado</span>
+                                    </td>
+                                  </tr>
+                            </ng-template>
+                             <ng-template pTemplate="summary">
+                                  <div class="">
+                                      Totalizador: 0
+                                  </div>
+                             </ng-template>
+                        </p-table>
+                    </div>
+                <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="displayModalVendedor=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                        </ng-template>
+                    
+                    </p-dialog>
+        
+                    
+        
+                    <div class="field col-12 md:col-6 p-3">
+                        <div class="p-inputgroup">
+                            <input [disabled]="true"  type="text" pInputText placeholder="Cliente">
+                               
+                            <button (click)="showModalCliente()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                                
+                            </button>      
+                        </div>
+                    </div>
+                    <p-dialog header="Pesquisa de Clientes" [(visible)]="displayModalCliente" [modal]="true" [style]="{width: '50vw'}"
+                    [draggable]="false" [resizable]="false">  
+        
+                    <div class="flex justify-content-between">
+                    </div>
+                    <div style="text-align: left">
+                      <i class="" 
+                         style="margin:4px 4px 0 0"> </i>
+                      <input type="text" pInputText 
+                             size="70" 
+                             placeholder="Pesquisar"
+                             (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                             style="width:fit-content" />
+                    </div>
+                    <div class="card shadow-3 mt-4 mb-4 p-0">
+                      <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+                      #myTab [value]="" 
+                      [scrollable]="false" 
+                      [globalFilterFields]=
+                      "['descricao']" [paginator]="true" class="w-100">
+                                <ng-template pTemplate="header">
+                                  <tr>
+                                    <th>Nome</th>
+                                     <th>Email</th>
+                                    
+                                     <th class="col-acoes-header"></th>
+                                  </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-clientes>
+                                    <tr>
+                                        <td [style]="{'width': '900px'}">
+                                          <span class="p-column-title">Nome</span>
+                                          {{ clientes.nome}}
+                                        </td>
+                                        <td [style]="{'width': '900px'}">
+                                            <span class="p-column-title">Email</span>
+                                            {{ clientes.email}}
+                                          </td>
+                                    </tr>
+                                </ng-template>
+                
+                            <ng-template  pTemplate="emptymessage">
+                                  <tr>
+                                    <td colspan="20">
+                                      <span>Nenhum registro encontrado</span>
+                                    </td>
+                                  </tr>
+                            </ng-template>
+                             <ng-template pTemplate="summary">
+                                  <div class="">
+                                      Totalizador: 0
+                                  </div>
+                             </ng-template>
+                        </p-table>
+                    </div>
+                <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="displayModalCliente=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                        </ng-template>
+                    
+                    </p-dialog>
+                    
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+                            <label for="icon">Data de Admissão</label>
+                        </span>
+                    </div>
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                            <label for="icon">Data de Vencimento</label>
+                        </span>
+                    </div>
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+                            <label for="icon">Data da carência</label>
+                        </span>
+                    </div>
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-dropdown [options]="venda" [style]="{width: '16vw'}" optionLabel="name" class="w-full"></p-dropdown>
+                            <label for="float-input" class="obrigatorio">Tipo de Venda</label>
+                        </span>
+                    </div> 
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-inputNumber [(ngModel)]="value" mode="currency" [style]="{width: '16vw'}" currency="BRL" locale="pt-BR"></p-inputNumber>
+                            <label for="float-input" class="obrigatorio">Valor Do Plano</label>
+                        </span>
+                    </div>
+        
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-dropdown [options]="cobranca" optionLabel="name" [style]="{width: '16vw'}" class="w-full"></p-dropdown>
+                            <label for="float-input" class="obrigatorio">Tipo de Contrato</label>
+                        </span>
+                    </div> 
+        
+               
+        
+                   
+                <p-fieldset legend="Cobrança" [toggleable]="true">
+                    <div class="formgrid grid">
+                        
+                        <div class="field col-12 md:col-12 p-3">
+                            <div class="p-inputgroup">
+                                <input [disabled]="true"  type="text" pInputText placeholder="Cobrador">
+                                   
+                                <button (click)="showModalCobrador()" type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn">
+                                    
+                                </button>      
+                            </div>
+        
+                            <p-dialog header="Pesquisa de Cobradores" [(visible)]="displayModalCobrador" [modal]="true" [style]="{width: '50vw'}"
+                            [draggable]="false" [resizable]="false">  
+                
+                            <div class="flex justify-content-between">
+                            </div>
+                            <div style="text-align: left">
+                              <i class="" 
+                                 style="margin:4px 4px 0 0"> </i>
+                              <input type="text" pInputText 
+                                     size="70" 
+                                     placeholder="Pesquisar"
+                                     (input)= "myTab.filterGlobal($event.target.value, 'contains')" 
+                                     style="width:fit-content" />
+                            </div>
+                            <div class="card shadow-3 mt-4 mb-4 p-0">
+                              <p-table [responsive]="true" [rows]="10" [paginator]="true" class="w-100"
+                              #myTab [value]="" 
+                              [scrollable]="false" 
+                              [globalFilterFields]=
+                              "['descricao']" [paginator]="true" class="w-100">
+                                        <ng-template pTemplate="header">
+                                          <tr>
+                                            <th>Nome</th>
+                                             <th>Nome de tratamento</th>
+                                            
+                                             <th class="col-acoes-header"></th>
+                                          </tr>
+                                        </ng-template>
+                                        <ng-template pTemplate="body" let-clientes>
+                                            <tr>
+                                                <td [style]="{'width': '900px'}">
+                                                  <span class="p-column-title">Nome</span>
+                                                  {{ clientes.nome}}
+                                                </td>
+                                                <td [style]="{'width': '900px'}">
+                                                    <span class="p-column-title">Nome de tratamento</span>
+                                                    {{ clientes.email}}
+                                                  </td>
+                                            </tr>
+                                        </ng-template>
+                        
+                                    <ng-template  pTemplate="emptymessage">
+                                          <tr>
+                                            <td colspan="20">
+                                              <span>Nenhum registro encontrado</span>
+                                            </td>
+                                          </tr>
+                                    </ng-template>
+                                     <ng-template pTemplate="summary">
+                                          <div class="">
+                                              Totalizador: 0
+                                          </div>
+                                     </ng-template>
+                                </p-table>
+                            </div>
+                        <ng-template pTemplate="footer">
+                                <p-button icon="pi pi-check" (click)="displayModalCobrador=false" label="Cancelar" styleClass="p-button-text"></p-button>
+                                </ng-template>
+                            
+                            </p-dialog>
+        
+                            
+                        </div>
+        
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-dropdown [options]="cobranca" optionLabel="name" class="w-full"></p-dropdown>
+                                <label for="float-input" class="obrigatorio">Tipo de Cobrança</label>
+                            </span>
+                        </div>
+                        
+                        <div class="field col-8 md:col-4 p-3">
+                            <span class="p-float-label">
+                            <p-inputNumber [(ngModel)]="value4" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal"
+                        decrementButtonClass="p-button-danger" incrementButtonClass="" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [min]="0" ></p-inputNumber>
+                        <label for="">Dia de vencimento</label>
+                            </span>
+                        </div>
+            
+                        <div class="field col-12 md:col-4 p-3">
+                            <span class="p-float-label">
+                                <p-dropdown [options]="nota" optionLabel="name" class="w-full" [style]="{width: '20vw'}" ></p-dropdown>
+                                <label for="float-input" class="obrigatorio">Gerar Nota Fiscal?</label>
+                            </span>
+                        </div>
+                </div>
+
+                
+                
+                </p-fieldset>
+
+                
+        
+                
+        
+        <br>
+        
+        
+                <p-fieldset legend="Adesão" [toggleable]="true" [style]="{width: '70vw'}"> 
+                    <div class="formgrid grid">
+                    <div class="field col-12 md:col-12 p-3">
+                        <span class="p-float-label">
+                            <input type="text" pInputText class="w-full" maxlength="100"> 
+                            <label for="float-input" class="obrigatorio">Motivo de adesão</label>
+                        </span>
+                    </div>
+                    
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-calendar [(ngModel)]="date5" [showIcon]="true" inputId="icon"></p-calendar>
+                            <label for="icon">Vencimento da Adesão</label>
+                        </span>
+                    </div> 
+        
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-inputNumber [(ngModel)]="value" [style]="{width: '16vw'}" mode="currency" currency="BRL" locale="pt-BR" ></p-inputNumber>
+                            <label for="float-input" class="obrigatorio">Valor Da adesão</label>
+                        </span>
+                    </div>
+        
+                    <div class="field col-12 md:col-4 p-3">
+                        <span class="p-float-label">
+                            <p-dropdown [options]="adesao" optionLabel="name" class="w-full" [style]="{width: '20vw'}"></p-dropdown>
+                                <label for="float-input" class="obrigatorio">Cobrar adesão?</label>
+                        </span>
+                    </div>
+        
+                   
+        
+        
+                   
+                </div>
+            
+            </p-fieldset>
+                
+        
+                <div class="field col-12 md:col-4 p-3">
+                    <span class="p-float-label">
+                        <textarea rows="5" cols="122" pInputTextarea></textarea>
+                        <label for="float-input" class="obrigatorio">Observação</label>
+                    </span>
+                </div> 
+        
+                    
+            </div>
+           
+            
+            <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
+         
+            
+    </p-tabPanel>
+
+    
+        <p-tabPanel header="Header II">
+            <ng-template pTemplate = "header">
+                <i class="pi pi-users" style="padding: 1em;"></i>
+                <span>Dependentes</span>
+
+                
+            </ng-template>
+            <div class="col-12 md:col-6 p-3">
+                <p-button label="Novo" style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
+                </div>
+            <div class="col-12 md:col-12">
+
+                    <p-table [responsive]="true" [rows]="15" [paginator]="true" class="w-100" 
+                    #myTab [value]="" [scrollable]="false" [globalFilterFields]="['id', 'cliente','carencia','plano','valor']">
+                              <ng-template pTemplate="header">
+                                
+                                  <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Admissão</th>
+                                    <th>Carência</th>
+                                    <th>Grau de parentesco</th>
+                                    <th>Status</th>
+                                    <th class="col-acoes-header"></th>
+                                  </tr>
+                              </ng-template>
+                              <ng-template pTemplate="body" let-departamento>
+                                  <tr>
+                                      <td [style]="{'width': '200px'}">
+                                        <span class="p-column-title">ID</span>
+                                        {{ departamento.id }}
+                                      </td>
+                                      <td [style]="{'width': '200px'}">
+                                        <span class="p-column-title">Cliente</span>
+                                        {{ departamento.cliente}}
+                                      </td>
+                                      <td [style]="{'width': '200px'}">
+                                          <span class="p-column-title">Admissão</span>
+                                          {{ departamento.admissao}}
+                                        </td>
+                  
+                                        <td [style]="{'width': '200px'}">
+                                          <span class="p-column-title">Carência</span>
+                                          {{ departamento.carencia}}
+                                        </td>
+                  
+                                        <td [style]="{'width': '200px'}">
+                                          <span class="p-column-title">Grau de parentesco</span>
+                                          {{ departamento.plano}}
+                                        </td>
+                  
+                                        <td [style]="{'width': '200px'}">
+                                          <span class="p-column-title">Status</span>
+                                          {{ departamento.valor}}
+                                        </td>
+                                      
+                                      <td class="col-acoes p-1 justify-content-between">
+                                        <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                                        styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                                        [routerLink]="['/atualizar/contratos', departamento.id]"></a>
+                                        <button pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                                        styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
+                                        ></button>
+                                      </td>
+                                    </tr>
+                              </ng-template>
+                          <ng-template  pTemplate="emptymessage">
+                                <tr>
+                                  <td colspan="9">
+                                    <span>Nenhum registro encontrado</span>
+                                  </td>
+                                </tr>
+                          </ng-template>
+                           <ng-template pTemplate="summary">
+                                <div class="">
+                                    Totalizador: 
+                                </div>
+                           </ng-template>
+                      </p-table>
+                  </div>
+
+            
+
+
+    <ng-template pTemplate="footer">
+</ng-template> 
+
+</p-tabPanel>
+
+
+<p-tabPanel>
+    <ng-template pTemplate = "header">
+        <i class="pi pi-user" style="padding: 1em;"></i>
+        <span>Índices</span>
+    </ng-template>
+    <div class="col-12 md:col-6 p-3">
+        <p-button label="Novo"  style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
+            </div>
+        <div class="col-12 md:col-12">
+        <p-table [responsive]="true" [rows]="15" [paginator]="true" class="w-100" 
+            #myTab [value]="" [scrollable]="false" [globalFilterFields]="['id', 'cliente','carencia','plano','valor']">
+                      <ng-template pTemplate="header">
+                        
+                          <tr>
+                            <th>ID</th>
+                            <th>Índice</th>
+                            <th>Lançamento</th>
+                            <th>Valor</th>
+                            <th>Inicial</th>
+                            <th>Final</th>
+                            <th class="col-acoes-header"></th>
+                          </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-departamento>
+                          <tr>
+                              <td [style]="{'width': '200px'}">
+                                <span class="p-column-title">ID</span>
+                                {{ departamento.id }}
+                              </td>
+                              <td [style]="{'width': '200px'}">
+                                <span class="p-column-title">Cliente</span>
+                                {{ departamento.cliente}}
+                              </td>
+                              <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Admissão</span>
+                                  {{ departamento.admissao}}
+                                </td>
+          
+                                <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Carência</span>
+                                  {{ departamento.carencia}}
+                                </td>
+          
+                                <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Grau de parentesco</span>
+                                  {{ departamento.plano}}
+                                </td>
+          
+                                <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Status</span>
+                                  {{ departamento.valor}}
+                                </td>
+                              
+                              <td class="col-acoes p-1 justify-content-between">
+                                <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                                styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                                [routerLink]="['/atualizar/contratos', departamento.id]"></a>
+                                <button pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                                styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
+                                ></button>
+                              </td>
+                            </tr>
+                      </ng-template>
+                  <ng-template  pTemplate="emptymessage">
+                        <tr>
+                          <td colspan="9">
+                            <span>Nenhum registro encontrado</span>
+                          </td>
+                        </tr>
+                  </ng-template>
+                   <ng-template pTemplate="summary">
+                        <div class="">
+                            Totalizador: 
+                        </div>
+                   </ng-template>
+              </p-table>
+            
+    </div>
+   
+    <ng-template pTemplate="footer">
+    </ng-template>  
+        
+    
+</p-tabPanel>
+
+
+
+<p-tabPanel>
+    <ng-template pTemplate = "header">
+        <i class="pi pi-user" style="padding: 1em;"></i>
+        <span>Parcelas</span>
+    </ng-template>
+
+    <p-button label="Gerar" style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
+
+    <p-button label="Pagamentos" icon="pi pi-file mr-2" ></p-button>
+
+    
+           
+
+    
+
+            
+            
+<div class="col-12 md:col-12">
+
+        
+            <p-table [responsive]="true" [rows]="15" [paginator]="true" class="w-100" 
+            #myTab [value]="" [scrollable]="false" [globalFilterFields]="['id', 'cliente','carencia','plano','valor']">
+                      <ng-template pTemplate="header">
+                        
+                          <tr>
+                            <th>Refêrencia</th>
+                            <th>Vencimento</th>
+                            <th>Valor do plano</th>
+                            <th>Valor do índice</th>
+                            <th>Total</th>
+                            <th>Valor pago</th>
+                            <th class="col-acoes-header"></th>
+                          </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-departamento>
+                          <tr>
+                              <td [style]="{'width': '200px'}">
+                                <span class="p-column-title">Refêrencia</span>
+                                {{ departamento.id }}
+                              </td>
+                              <td [style]="{'width': '200px'}">
+                                <span class="p-column-title">Vencimento</span>
+                                {{ departamento.cliente}}
+                              </td>
+                              <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Valor do índice</span>
+                                  {{ departamento.admissao}}
+                                </td>
+          
+                                <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Total</span>
+                                  {{ departamento.carencia}}
+                                </td>
+          
+                                <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Grau de parentesco</span>
+                                  {{ departamento.plano}}
+                                </td>
+          
+                                <td [style]="{'width': '200px'}">
+                                  <span class="p-column-title">Valor pago</span>
+                                  {{ departamento.valor}}
+                                </td>
+                              
+                              <td class="col-acoes p-1 justify-content-between">
+                                <a pButton pRipple type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                                styleClass="p-button-sm" class="p-button-raised p-button-info p-button-text"
+                                [routerLink]="['/atualizar/contratos', departamento.id]"></a>
+                                <button pButton pRipple icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                                styleClass="p-button-sm" class="p-button-raised p-button-danger p-button-text"
+                                ></button>
+                              </td>
+                            </tr>
+                      </ng-template>
+                  <ng-template  pTemplate="emptymessage">
+                        <tr>
+                          <td colspan="9">
+                            <span>Nenhum registro encontrado</span>
+                          </td>
+                        </tr>
+                  </ng-template>
+                   <ng-template pTemplate="summary">
+                        <div class="">
+                            Totalizador: 
+                        </div>
+                   </ng-template>
+              </p-table>
+            
+    </div>
+   
+ 
+        
+    
+</p-tabPanel>
+        
+    </p-tabView>
+    </div>
+
+
+
+    

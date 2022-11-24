@@ -340,14 +340,14 @@
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-dropdown [options]="venda" optionLabel="name" class="w-full"></p-dropdown>
+                    <p-dropdown [options]="venda" [style]="{width: '16vw'}" optionLabel="name" class="w-full"></p-dropdown>
                     <label for="float-input" class="obrigatorio">Tipo de Venda</label>
                 </span>
             </div> 
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputNumber [(ngModel)]="value" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
+                    <p-inputNumber [(ngModel)]="value" [style]="{width: '16vw'}" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
                     <label for="float-input" class="obrigatorio">Valor Do Plano</label>
                 </span>
             </div>
@@ -363,7 +363,7 @@
        
 
            
-        <p-fieldset legend="Cobrança" [toggleable]="true" style="width: 100%; height: 100%;">
+        <p-fieldset legend="Cobrança" [toggleable]="true"  [style]="{width: '70vw'}">
             <div class="formgrid grid">
                 
                 <div class="field col-12 md:col-12 p-3">
@@ -456,7 +456,7 @@
     
                 <div class="field col-12 md:col-4 p-3">
                     <span class="p-float-label">
-                        <p-dropdown [options]="nota" optionLabel="name" class="w-full" style="width: 50%;"></p-dropdown>
+                        <p-dropdown [options]="nota" optionLabel="name" class="w-full" [style]="{width: '20vw'}"></p-dropdown>
                         <label for="float-input" class="obrigatorio">Gerar Nota Fiscal?</label>
                     </span>
                 </div>
@@ -468,7 +468,7 @@
 <br>
 
 
-        <p-fieldset legend="Adesão" [toggleable]="true" style="width: 100%;"> 
+        <p-fieldset legend="Adesão" [toggleable]="true" [style]="{width: '70vw'}"> 
             <div class="formgrid grid">
             <div class="field col-12 md:col-12 p-3">
                 <span class="p-float-label">
@@ -488,14 +488,14 @@
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputNumber [(ngModel)]="value" mode="currency" currency="BRL" locale="pt-BR" style="width: 1em;"></p-inputNumber>
+                    <p-inputNumber [(ngModel)]="value" [style]="{width: '20vw'}" mode="currency" currency="BRL" locale="pt-BR" [style]="{width: '10vw'}" ></p-inputNumber>
                     <label for="float-input" class="obrigatorio">Valor Da adesão</label>
                 </span>
             </div>
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-dropdown [options]="cobranca" optionLabel="name" class="w-full" style="width: 50%;"></p-dropdown>
+                    <p-dropdown [options]="cobranca" optionLabel="name" class="w-full" [style]="{width: '20vw'}" ></p-dropdown>
                         <label for="float-input" class="obrigatorio">Cobrar adesão?</label>
                 </span>
             </div>

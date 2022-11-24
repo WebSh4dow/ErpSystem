@@ -70,6 +70,7 @@ import { ClienteConfiguracoesComponent } from './components/cliente-configuracoe
 import { ContratosConfiguracoesComponent } from './components/contratos-configuracoes/contratos-configuracoes.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { CadastroFuncionariosComponent } from './components/cadastro-funcionarios/cadastro-funcionarios.component';
+import { AtualizarContratosComponent } from './components/atualizar-contratos/atualizar-contratos.component';
 const routes: Routes = [
   {
     path: '', component: AppLayoutComponent,
@@ -124,6 +125,7 @@ const routes: Routes = [
       {path: 'clientes/:id', component: CadastroPlanosClientesComponent},
       {path: 'contratos', component: ContratosComponent},
       {path: 'contratos/:id', component: CadastroContratosComponent},
+      {path: 'atualizar/contratos/:id', component: AtualizarContratosComponent},
       {path: 'caixas/:id', component: CadastroCaixasComponent},
       {path: 'caixas', component: CaixasComponent},
       {path: 'baixas', component: BaixasParcelasComponent},

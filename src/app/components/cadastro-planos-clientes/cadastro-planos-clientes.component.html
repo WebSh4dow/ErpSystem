@@ -25,7 +25,7 @@
             
                         <div class="field col-12 md:col-6 p-3">
                             <span class="p-float-label">
-                                <p-calendar [(ngModel)]="date4" [showIcon]="true" inputId="icon"></p-calendar>
+                                <p-calendar [(ngModel)]="date4" [style]="{width: '20vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                                 <label for="icon">Data de Cadastro</label>
                             </span>
                         </div>
@@ -61,7 +61,7 @@
             
                         <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-inputMask mask=" 99.999.999-9"  class="w-full"></p-inputMask>
+                                <p-inputMask mask=" 99.999.999-9" [style]="{width: '20vw'}"  class="w-full"></p-inputMask>
                                 <label for="float-input" class="obrigatorio">RG</label>
                             </span>
                         </div>
@@ -75,7 +75,7 @@
             
                         <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-inputMask mask="999.999.999-99"  class="w-full"></p-inputMask>
+                                <p-inputMask mask="999.999.999-99" [style]="{width: '20vw'}"  class="w-full"></p-inputMask>
                                 <label for="float-input" class="obrigatorio">CPF</label>
                             </span>
                         </div>
@@ -96,33 +96,33 @@
             
                         <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
+                                <p-dropdown [options]="tipo" [style]="{width: '20vw'}" optionLabel="name" class="w-full"></p-dropdown>
                                 <label for="float-input" class="obrigatorio">Tipo Sanguíneo</label>
                             </span>
                         </div> 
             
                         <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-dropdown [options]="sexo" optionLabel="name" class="w-full"></p-dropdown>
+                                <p-dropdown [options]="sexo" [style]="{width: '20vw'}" optionLabel="name" class="w-full"></p-dropdown>
                                 <label for="float-input" class="obrigatorio">Sexo</label>
                             </span>
                         </div> 
                        <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                                <p-calendar [(ngModel)]="date1" [style]="{width: '20vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                                 <label for="icon">Data de Falecimento</label>
                             </span>
                         </div>
             
                         <div class="field col-12 md:col-4 p-3">
                             <span class="p-float-label">
-                                <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+                                <p-calendar [(ngModel)]="date2" [style]="{width: '20vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                                 <label for="icon">Data de Nascimento</label>
                             </span>
                         </div>
                       <div class="field col-12 md:col-10 p-3">
                             <span class="p-float-label">
-                                <textarea rows="5" cols="95" pInputTextarea></textarea>
+                                <textarea rows="5" cols="95" [style]="{width: '65vw'}" pInputTextarea></textarea>
                                 <label for="float-input" class="obrigatorio">Observação</label>
                             </span>
                         </div> 
@@ -169,7 +169,7 @@
             </div>
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+                    <p-calendar [(ngModel)]="date3" [style]="{width: '20vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data de Cadastro</label>
                 </span>
             </div>
@@ -183,7 +183,7 @@
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputMask mask="99.999.999/9999-99" class="w-full"></p-inputMask>
+                    <p-inputMask mask="99.999.999/9999-99" [style]="{width: '20vw'}" class="w-full"></p-inputMask>
                     <label for="float-input" class="obrigatorio">CNPJ</label>
                 </span>
             </div>

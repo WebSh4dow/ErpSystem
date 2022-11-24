@@ -42,7 +42,7 @@
             
            <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-dropdown [options]="sexo" optionLabel="name" class="w-full"></p-dropdown>
+                    <p-dropdown [options]="sexo" [style]="{width: '21.5vw'}" optionLabel="name" class="w-full"></p-dropdown>
                     <label for="float-input" class="obrigatorio">Sexo</label>
                 </span>
             </div> 
@@ -583,7 +583,7 @@
 
             <div class="field col-10 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputMask mask="9999999999-9" class="w-full"></p-inputMask>
+                    <p-inputMask mask="9999999999-9" [style]="{width: '21.5vw'}" class="w-full"></p-inputMask>
                     <label for="float-input" class="obrigatorio">PIS</label>
                 </span>
             </div>
@@ -591,7 +591,7 @@
             
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputMask mask="999.999.999-99" class="w-full"></p-inputMask>
+                    <p-inputMask mask="999.999.999-99"[style]="{width: '21.5vw'}" class="w-full"></p-inputMask>
                     <label for="float-input" class="obrigatorio">CPF</label>
                 </span>
             </div>
@@ -611,28 +611,28 @@
             </div>
          <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-inputMask mask="99.999.999-9" class="w-full"></p-inputMask>
+                    <p-inputMask mask="99.999.999-9"[style]="{width: '21.5vw'}" class="w-full"></p-inputMask>
                     <label for="float-input" class="obrigatorio">RG</label>
                 </span>
             </div>
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date1" [showIcon]="true" inputId="icon"></p-calendar>
+                    <p-calendar [(ngModel)]="date1" [style]="{width: '21.5vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data de Nascimento</label>
                 </span>
             </div>
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date2" [showIcon]="true" inputId="icon"></p-calendar>
+                    <p-calendar [(ngModel)]="date2" [style]="{width: '21.5vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data de admissão</label>
                 </span>
             </div>
 
             <div class="field col-12 md:col-4 p-3">
                 <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+                    <p-calendar [(ngModel)]="date3" [style]="{width: '21.5vw'}" [showIcon]="true" inputId="icon"></p-calendar>
                     <label for="icon">Data de demissão</label>
                 </span>
             </div>

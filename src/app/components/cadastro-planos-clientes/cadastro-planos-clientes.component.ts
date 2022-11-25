@@ -12,6 +12,8 @@ export class CadastroPlanosClientesComponent implements OnInit {
 
   sexo: any = [];
 
+  uf: any = [];
+
   tipo: any = [];
 
   value1:string = "sim";
@@ -19,6 +21,8 @@ export class CadastroPlanosClientesComponent implements OnInit {
   selectStatus: any [];
 
   selectStatus2: any [];
+
+
 
   date1!: Date;
 
@@ -38,11 +42,32 @@ export class CadastroPlanosClientesComponent implements OnInit {
 
   selectPessoa:any = null;
 
+  displayModalNaturalidade: boolean;
+  
+  displayModalProfissao: boolean;
+
+  displayModalReligiao: boolean
+
+  displayModalEstadoCivil:boolean
+
+
+
+  displayCadastroModalNaturalidade:boolean
+
+  displayModalCadastroProfissao:boolean
+
+  displayModalCadastroReligiao:boolean
+
+  displayModalCadastroEstadoCivil:boolean
+
+
   invalidDates: Array<Date>
   
   constructor() {
     this.sexo.push({name:'MASCULINO', value: 0});
     this.sexo.push({name:'FEMININO', value: 1});
+
+    this.uf.push({name:'CE', value: 0});
     
 
     this.tipo.push({name:'NÃO INFORMADO', value: 0});
@@ -54,6 +79,8 @@ export class CadastroPlanosClientesComponent implements OnInit {
     this.tipo.push({name:'AB-', value: 6});
     this.tipo.push({name:'O+', value: 7});
     this.tipo.push({name:'O-', value: 8});
+
+
 
 
     this.selectStatus2 = [{label:'Sim',value:'sim'},{label:'Não',value:'nao'}]
@@ -104,6 +131,41 @@ export class CadastroPlanosClientesComponent implements OnInit {
     let invalidDate = new Date();
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
+  }
+
+
+  showModalDialogNaturalidade() {
+    this.displayModalNaturalidade = true;
+  }
+  
+  showModalDialogProfissao() {
+    this.displayModalProfissao = true;
+  }
+  
+  showModalDialogReligiao(){
+    this.displayModalReligiao = true;
+  }
+  
+  showModalDialogEstadoCivil(){
+    this.displayModalEstadoCivil = true;
+  }
+
+
+
+  showModalDialogCadastroNaturalidade() {
+    this.displayCadastroModalNaturalidade = true;
+  }
+  
+  showModalDialogCadastroProfissao() {
+    this.displayModalCadastroProfissao = true;
+  }
+  
+  showModalDialogCadastroReligiao(){
+    this.displayModalCadastroReligiao = true;
+  }
+  
+  showModalDialogCadastroEstadoCivil(){
+    this.displayModalCadastroEstadoCivil = true;
   }
 
 

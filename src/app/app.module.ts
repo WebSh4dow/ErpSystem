@@ -108,6 +108,7 @@ import { FuncionariosComponent } from './components/funcionarios/funcionarios.co
 import { CadastroFuncionariosComponent } from './components/cadastro-funcionarios/cadastro-funcionarios.component';
 import { AtualizarClienteComponent } from './components/atualizar-cliente/atualizar-cliente.component';
 import { AtualizarContratosComponent } from './components/atualizar-contratos/atualizar-contratos.component';
+import { EdicaoClienteComponent } from './components/edicao-cliente/edicao-cliente.component';
 
 @NgModule({
   declarations: [
@@ -182,6 +183,7 @@ import { AtualizarContratosComponent } from './components/atualizar-contratos/at
     CadastroFuncionariosComponent,
     AtualizarClienteComponent,
     AtualizarContratosComponent,
+    EdicaoClienteComponent,
     
     
    

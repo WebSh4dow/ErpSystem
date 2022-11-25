@@ -36,7 +36,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from "@angular/common/http";
 import {DialogModule} from 'primeng/dialog';
 import {CheckboxModule} from 'primeng/checkbox';
-
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import { EstadosCivisComponent } from './components/estados-civis/estados-civis.component';
 import { GrauParentescoComponent } from './components/grau-parentesco/grau-parentesco.component';
 import { ProfissoesComponent } from './components/profissoes/profissoes.component';
@@ -223,7 +223,8 @@ import { EdicaoClienteComponent } from './components/edicao-cliente/edicao-clien
     DialogModule,
     MatIconModule,
     FieldsetModule,
-    TabViewModule
+    TabViewModule,
+    MatCheckboxModule
 
    
     

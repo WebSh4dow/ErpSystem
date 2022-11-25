@@ -40,6 +40,7 @@ export class CadastroContratosComponent implements OnInit {
 
   selectPessoa:any = null;
 
+
   displayModalCliente: boolean;
   
   displayModalPlano: boolean;
@@ -93,6 +94,9 @@ export class CadastroContratosComponent implements OnInit {
     this.invalidDates = [today,invalidDate];
 
 }
+
+
+
 
   ngOnInit(): void {
     this.items = [

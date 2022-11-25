@@ -60,6 +60,8 @@ export class CadastroPlanosClientesComponent implements OnInit {
 
   displayModalCadastroEstadoCivil:boolean
 
+  isHidden=false;
+  options = true;
 
   invalidDates: Array<Date>
   
@@ -105,6 +107,10 @@ export class CadastroPlanosClientesComponent implements OnInit {
     invalidDate.setDate(today.getDate() - 1);
     this.invalidDates = [today,invalidDate];
 
+}
+
+toggle(){
+  this.isHidden=!this.isHidden;
 }
 
   ngOnInit(): void {

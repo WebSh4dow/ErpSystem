@@ -15,34 +15,34 @@
         <div class="formgrid grid">
 
 
-            <div class="field col-12 md:col-8 p-3">
+            <div class="field col-12 md:col-9 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="100"> 
                     <label for="float-input" class="obrigatorio">Descrição</label>
                 </span>
             </div>
 
-            <div class="field col-12 md:col-4 p-3">
+            <div class="field col-12 md:col-2 p-3">
                 <span class="p-float-label">
                     <p-inputNumber [(ngModel)]="value2" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
                     <label for="float-input" class="obrigatorio">Valor</label>
                 </span>
             </div>
 
-            <div class="field col-12 md:col-4 p-3">
+            <div class="field col-12 md:col-6 p-3">
                 <span class="p-float-label">
                     <input type="text" pInputText class="w-full"  maxlength="3"> 
                     <label for="float-input" class="obrigatorio">Dias de Carência</label>
                 </span>
             </div>
 
-            <div class="field col-12 md:col-4 p-3">
+            <div class="field col-12 md:col-2 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="tipo" optionLabel="name" class="w-full"></p-dropdown>
                     <label for="float-input" class="obrigatorio">Tipo Valor</label>
                 </span>
             </div> 
-         <div class="field col-12 md:col-4 p-3">
+         <div class="field col-12 md:col-2 p-3">
                 <span class="p-float-label">
                     <p-dropdown [options]="uso" optionLabel="name" class="w-full"></p-dropdown>
                     <label for="float-input" class="obrigatorio">Uso</label>

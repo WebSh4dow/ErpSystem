@@ -9,7 +9,8 @@
 </div>
 
 <div class="card">
-       <div class="formgrid grid">
+
+    <div class="formgrid grid">
                    
  </div>
     <p-tabView styleClass="tabview-custom">
@@ -40,9 +41,7 @@
                             <label for="float-input" class="obrigatorio">Número interno</label>
                         </span>
                     </div>
-
-                    
-                    <div class="field col-12 md:col-4 p-3">
+                      <div class="field col-12 md:col-4 p-3">
                         <span class="p-float-label">
                             <input type="text" pInputText class="w-full"  maxlength="100"> 
                             <label for="float-input" class="obrigatorio">Nome de tratamento</label>
@@ -68,17 +67,13 @@
                             <label for="float-input" class="obrigatorio">CNPJ</label>
                         </span>
                     </div>
-        
-        
-                    <div class="field col-12 md:col-8 p-3">
+                 <div class="field col-12 md:col-8 p-3">
                         <span class="p-float-label">
                             <input type="text" pInputText class="w-full"  maxlength="100"> 
                             <label for="float-input" class="obrigatorio">Email</label>
                         </span>
                     </div>
-        
                     
-        
                     <div class="field col-10 md:col-4 p-3">
                         <span class="p-float-label">
                             <input type="text" pInputText class="w-full"  maxlength="100"> 
@@ -101,10 +96,7 @@
                             <label for="float-input" class="obrigatorio">Observação</label>
                         </span>
                     </div> 
-
-
-
-            <p-fileUpload style="width: 100%;"
+    <p-fileUpload style="width: 100%;"
 name="myfile[]"
 accept="image/*">
 </p-fileUpload>
@@ -139,11 +131,6 @@ accept="image/*">
                     </span>
                 </div>
 
-           
-
-   
-
-    
                 <div class="field col-12 md:col-8 p-3">
                     <span class="p-float-label">
                         <input type="text" pInputText class="w-full"  maxlength="100"> 
@@ -263,9 +250,6 @@ accept="image/*">
                                     <label for="float-input" class="obrigatorio"> Código município </label>
                                 </span>
                             </div>
-
-                            
-
                                 <div class="field col-12 md:col-12 p-3">
                                     <span class="p-float-label">
                                         <input type="text" pInputText class="w-full"  maxlength="100"> 
@@ -287,13 +271,6 @@ accept="image/*">
     
                             </ng-template>  
                         </p-dialog>
-
-
-
-
-
-
-
                     <p-dialog header="Pesquisa de Naturalidade" [(visible)]="displayModalNaturalidade" [modal]="true" [style]="{width: '50vw'}"
                     [draggable]="false" [resizable]="false">
     
@@ -352,8 +329,7 @@ accept="image/*">
                         </ng-template>
                 </p-dialog>
                 </div>
-
-
+                
                 <div class="field col-12 md:col-6 p-3">
                     <div class="p-inputgroup">
                         <input type="text"   [disabled]="true"  pInputText placeholder="Profissão">   
@@ -386,9 +362,6 @@ accept="image/*">
     
                             </ng-template>  
                         </p-dialog>
-
-
-
                     <p-dialog header="Pesquisa de Profissões" [(visible)]="displayModalProfissao" [modal]="true" [style]="{width: '50vw'}"
                     [draggable]="false" [resizable]="false">
     
@@ -443,8 +416,7 @@ accept="image/*">
                         </ng-template>
                 </p-dialog>
                 </div>
-
-
+              
                 <div class="field col-12 md:col-6 p-3">
                     <div class="p-inputgroup">
                         <input type="text"   [disabled]="true"  pInputText placeholder="Estado civil">   
@@ -452,11 +424,7 @@ accept="image/*">
                         <button (click)="showModalDialogCadastroEstadoCivil()" style="left: 1em;"  pButton pRipple type="button" label="+" styleClass="p-button-warn"></button>      
                     </div>
 
-
-
-
-
-                    <p-dialog header="Cadastro de Estado Civil" [(visible)]="displayModalCadastroEstadoCivil" [modal]="true" [style]="{width: '50vw'}"
+                <p-dialog header="Cadastro de Estado Civil" [(visible)]="displayModalCadastroEstadoCivil" [modal]="true" [style]="{width: '50vw'}"
                     [draggable]="false" [resizable]="false">  
                 
                     <div class="grid  md:justify-content-between">
@@ -482,17 +450,7 @@ accept="image/*">
                             </ng-template>  
                         </p-dialog>
 
-
-
-
-
-
-
-
-
-
-                    
-                    <p-dialog header="Pesquisa de Estado civil" [(visible)]="displayModalEstadoCivil" [modal]="true" [style]="{width: '50vw'}"
+                <p-dialog header="Pesquisa de Estado civil" [(visible)]="displayModalEstadoCivil" [modal]="true" [style]="{width: '50vw'}"
                     [draggable]="false" [resizable]="false">
     
                     <div class="flex justify-content-between">
@@ -582,13 +540,7 @@ accept="image/*">
                             </ng-template>  
                         </p-dialog>
 
-
-
-
-
-
-
-                    <p-dialog header="Pesquisa de Religiões" [(visible)]="displayModalReligiao" [modal]="true" [style]="{width: '50vw'}"
+                 <p-dialog header="Pesquisa de Religiões" [(visible)]="displayModalReligiao" [modal]="true" [style]="{width: '50vw'}"
                     [draggable]="false" [resizable]="false">
     
                     <div class="flex justify-content-between">
@@ -644,8 +596,6 @@ accept="image/*">
                 </p-dialog>
                 </div>
     
-
-
                 <div class="field col-12 md:col-4 p-3">
                     <label for="float-input" class="obrigatorio">Ver Observação?</label>
                     <span class="p-float-label"> 
@@ -653,46 +603,22 @@ accept="image/*">
                 
             </span>
         </div>
-
-                
-
-
-                
-              <div class="field col-12 md:col-10 p-3">
+                <div class="field col-12 md:col-10 p-3">
                     <span class="p-float-label">
                         <textarea rows="5" cols="95" [style]="{width: '65vw'}" pInputTextarea></textarea>
                         <label for="float-input" class="obrigatorio">Observação</label>
                     </span>
                 </div> 
 
-        
-
-
-
-    
-    <p-fileUpload style="width: 100%;"
+<p-fileUpload style="width: 100%;"
 name="myfile[]"
 accept="image/*">
 </p-fileUpload>
 
-
 <small class="text-left"> Arraste a imagem aqui ou selecione </small>
-
 </div>
-
-          
-            
-
-               
-
-            </div>
-        
-
-
-             
-<br>
-
-
+    </div>
+        <br>
             <ng-template pTemplate="footer">
                 <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
             </ng-template>         

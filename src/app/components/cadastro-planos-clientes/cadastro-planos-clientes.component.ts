@@ -22,8 +22,6 @@ export class CadastroPlanosClientesComponent implements OnInit {
 
   selectStatus2: any [];
 
-
-
   date1!: Date;
 
   date2!: Date;
@@ -50,8 +48,6 @@ export class CadastroPlanosClientesComponent implements OnInit {
 
   displayModalEstadoCivil:boolean
 
-
-
   displayCadastroModalNaturalidade:boolean
 
   displayModalCadastroProfissao:boolean
@@ -61,6 +57,7 @@ export class CadastroPlanosClientesComponent implements OnInit {
   displayModalCadastroEstadoCivil:boolean
 
   isHidden=false;
+
   options = true;
 
   invalidDates: Array<Date>
@@ -81,12 +78,7 @@ export class CadastroPlanosClientesComponent implements OnInit {
     this.tipo.push({name:'AB-', value: 6});
     this.tipo.push({name:'O+', value: 7});
     this.tipo.push({name:'O-', value: 8});
-
-
-
-
     this.selectStatus2 = [{label:'Sim',value:'sim'},{label:'Não',value:'nao'}]
-
     this.selectStatus = [{label:' Fisica',value:'Física'},{label:'juridica',value:'Júridica'}]
 
     let today = new Date();
@@ -156,8 +148,6 @@ toggle(){
     this.displayModalEstadoCivil = true;
   }
 
-
-
   showModalDialogCadastroNaturalidade() {
     this.displayCadastroModalNaturalidade = true;
   }
@@ -173,9 +163,5 @@ toggle(){
   showModalDialogCadastroEstadoCivil(){
     this.displayModalCadastroEstadoCivil = true;
   }
-
-
-  
-
 
 }

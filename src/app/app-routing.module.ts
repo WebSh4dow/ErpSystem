@@ -71,6 +71,7 @@ import { ContratosConfiguracoesComponent } from './components/contratos-configur
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { CadastroFuncionariosComponent } from './components/cadastro-funcionarios/cadastro-funcionarios.component';
 import { AtualizarContratosComponent } from './components/atualizar-contratos/atualizar-contratos.component';
+import { CadastrarDependentesComponent } from './components/cadastrar-dependentes/cadastrar-dependentes.component';
 const routes: Routes = [
   {
     path: '', component: AppLayoutComponent,
@@ -144,6 +145,7 @@ const routes: Routes = [
       {path: 'configuracoes-caixas',component: CaixasConfiguracoesComponent},
       {path: 'funcionarios',component: FuncionariosComponent},
       {path: 'funcionarios/:id',component: CadastroFuncionariosComponent},
+      {path:'cadastrar-dependentes',component:CadastrarDependentesComponent}
       
       
 

@@ -12,6 +12,8 @@
      <ng-template pTemplate="header">
            
         </ng-template>  
+
+        <div class="formgrid grid ">
         
         <div class="field col-12 md:col-12 p-3">
             <span class="p-float-label">
@@ -20,14 +22,14 @@
             </span>
         </div>
 
-        <div class="field col-12 md:col-8 p-3">
+        <div class="field col-12 md:col-4 p-3">
             <span class="p-float-label">
-                <input type="text" pInputText class="w-full"  maxlength="100"> 
+                <input type="text" pInputText class="w-full" disabled = "true"  maxlength="100"> 
                 <label for="float-input" class="obrigatorio">Usuário Abertura</label>
             </span>
         </div>
            
-            <div class="field col-12 md:col-8 p-3">
+            <div class="field col-12 md:col-6 p-3">
                 <div class="p-inputgroup">
                     <input type="text" [disabled]="true"  pInputText placeholder="Grupo">   
                     <button (click)="showModalDialog()"type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>      
@@ -88,11 +90,14 @@
                     </ng-template>
             </p-dialog>
     </div>
+</div>
         <ng-template pTemplate="footer">
             <button pButton pRipple type="button" label="Salvar" class="p-button-raised  p-button-text"></button>
         </ng-template>  
     </p-panel>
 </div>
+
+
 
 
 

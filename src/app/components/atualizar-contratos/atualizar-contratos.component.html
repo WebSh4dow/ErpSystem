@@ -526,6 +526,8 @@
                         <label for="float-input" class="obrigatorio">Observação</label>
                     </span>
                 </div> 
+
+                
         
                     
             </div>
@@ -545,7 +547,7 @@
                 
             </ng-template>
             <div class="col-12 md:col-6 p-3">
-              <p-button label="Novo" style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
+              <p-button routerLink="/cadastrar-dependentes" label="Novo" style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
             </div>
             <div class="col-12 md:col-12">
 
@@ -633,7 +635,7 @@
         <span>Índices</span>
     </ng-template>
     <div class="col-12 md:col-6 p-3">
-      <p-button label="Novo" style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
+      <p-button  routerLink="/" label="Novo" style="padding: 1em;" icon="pi pi-file mr-2"></p-button>
     </div>
         <div class="col-12 md:col-12">
         <p-table [responsive]="true" [rows]="15" [paginator]="true" class="w-100" 

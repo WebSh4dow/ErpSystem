@@ -189,9 +189,7 @@ export class CadastroFuncionariosComponent implements OnInit {
   this.tableData = 
   [{nome:'Matriz',sigla:'MSG'},]
 
-
-
- this.colsCargos = [
+  this.colsCargos = [
     { field: 'descricao', header: 'descricao' },
  ];
 

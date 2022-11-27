@@ -109,6 +109,7 @@ import { CadastroFuncionariosComponent } from './components/cadastro-funcionario
 import { AtualizarClienteComponent } from './components/atualizar-cliente/atualizar-cliente.component';
 import { AtualizarContratosComponent } from './components/atualizar-contratos/atualizar-contratos.component';
 import { EdicaoClienteComponent } from './components/edicao-cliente/edicao-cliente.component';
+import { CadastrarDependentesComponent } from './components/cadastrar-dependentes/cadastrar-dependentes.component';
 
 @NgModule({
   declarations: [
@@ -184,6 +185,7 @@ import { EdicaoClienteComponent } from './components/edicao-cliente/edicao-clien
     AtualizarClienteComponent,
     AtualizarContratosComponent,
     EdicaoClienteComponent,
+    CadastrarDependentesComponent,
     
     
    
